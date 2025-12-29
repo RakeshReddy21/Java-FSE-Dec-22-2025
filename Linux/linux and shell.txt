@@ -1,0 +1,104 @@
+mkdir File Name --> Creates a new folder in the current location
+ls --> To show all the files in current folder
+cd path --> Navigates to the folder
+cd path/path1 
+cd .. -->Move to back 
+cd ../.. 
+pwd --> present working directory
+who --> Gives the name date and time
+whoami --> gives the username
+; --> to enter multiple command we can use semi-colon ";" --> Date ; who
+su --> swith user 
+clear --> To clear previous commands
+uname --> OS name
+uname -r --> gives the linuc terminal information
+uname -a --> Gives all the information
+rmdir --> remove the directory
+touch FileName.txt --> To create a file 
+echo 'Hello World' > commands.txt --> > and < symbols shown as predirection signals
+echo 'Hello World' >> commands.txt --> By using >> the text will appends into the file
+cat FileName.txt --> We can see every thing in the file
+vi FileName.txt --> To enter the multiple things in a single file --> ;wq --> To save the file
+wc FileName.txt --> Gives no.of lines no.of words and no.of characters
+code file.txt 
+linuxcmds(current) mv linuxcmds/file1.txt linux --> To move one file to another folder
+ls -l --> Gives additional info of the file
+grep directory file.txt --> To check the directory workd in the file --> global regular expression p...
+sort filename.txt --> It will sort and shows but it will not update in the original file
+sort -r filename.txt --> It will sort in reverse direction (Descending)
+ps --> To lsit of the processer running
+touch hello.sh --> shell scripting
+
+
+
+
+
+                        Shell Scripting
+
+To write all the commands and run it as a file 
+
+echo "Hello World"
+echo "Welcome to Linux"
+
+sh hello.sh --> To run the shell file
+
+# --> Commands
+#! (shebang) --> #! /bin/bash (path) --> The shebang line's purpose is to tell the operating system which interpreter should be used to execute the commands in the script
+
+In hello.sh file 
+
+    date
+    who
+    whoami
+
+by sh hello.sh --> It will executes all the commands
+
+chmod +x hello.sh --> To change the mode
+    ./hello.sh 
+
+
+Fuction.sh
+
+#!/bin/bash
+# Simple Linux functions
+
+name='Alice'
+hello(){
+    echo "Hello $name"
+}
+
+add(){
+    sum=$($2+$3)
+    echo "Sum of $1 and $2 = $sum"
+}
+
+hello
+add $1 $2
+
+sh/bash function 2 5 --> $1 will be 2 and $ 5 will be the 5 
+
+
+for i in 1 2 3 4 5
+do echo "Number : $i"
+done
+
+list = ("Pen" "Pencil" "box")
+echo "All items : ${list[0]}"
+for item in "${list[0]}"
+do 
+echo "$item"
+done
+
+
+
+
+                        Git
+
+git init --> To Initialize the repo
+git status
+git add .
+git commit -m "Message"
+git log --> Gives the history of the repo
+git push 
+
+

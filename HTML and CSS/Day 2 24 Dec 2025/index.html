@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="message"></p>
+        <input type="button" onclick="display()" value = "Click">
+    </div>
+    <script>
+        function display(){
+            let message = "Have a nice day!";
+            localStorage.setItem("message", message);
+            document.getElementById("message").innerHTML = localStorage.getItem("message")
+        }
+    </script>
+</body>
+</html>

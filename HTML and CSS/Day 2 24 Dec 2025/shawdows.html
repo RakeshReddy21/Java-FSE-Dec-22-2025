@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shadow{
+            text-shadow: -4px -4px rgb(214, 73, 73) ;
+        }
+        .no-spread{
+            box-shadow: 0px 10px 20px;
+        }
+        .spread{
+            box-shadow: 0px 10px 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="spread">CSS Shadwos</h1>
+        <h3 class="no-spread">What is Lorem?</h3>
+        <p class="shadow">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores ad officiis necessitatibus, rerum possimus nam natus quidem aliquam ut dicta fuga laboriosam ex consectetur, id magnam tempora fugiat deserunt saepe! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi neque libero dignissimos optio nesciunt aut odio ducimus similique quae asperiores, quasi nihil excepturi, possimus, ab maxime amet molestias est perferendis.</p>
+    </div>
+</body>
+</html> -->
+
+
+
+<html>
+    <head>
+        <meta  name="viewport" content="initial-scale=1.0 ,width=device-width "/>
+<style>
+    .linear-gradient{
+        background: linear-gradient( to bottom right,
+        violet 20%,
+        indigo 20%,
+        blue 20%,
+        green 50%,
+        yellow 60%,
+        orange 70%,
+        red 70%
+
+        );
+        width: 600px;
+        height: 400px;
+    }
+
+    .radial-gradient{
+        margin: 1rem ;
+        width: 600px;
+        height: 400px;
+        background: radial-gradient(closest-corner circle at center , yellow,rgb(118, 105, 234));
+    }
+
+    .repeat-gradient{
+        margin: 1rem ;
+        width: 600px;
+        height: 400px;
+        background: repeating-radial-gradient(black 0px ,orange 5px, red 10px) 
+    }
+ 
+
+    .shape-change{
+        height: 600px;
+        width:400px ;
+        /* clip-path: circle(60% at 260%  100%); */
+        clip-path: circle(50% at 50% 50%);
+
+    }
+
+    </style>
+    </head>
+    <body> 
+        <div class="shape1"> 
+            <p>
+             Hello world    
+            </p>
+            <img  src="../Assets/download.jpeg"/>
+          
+        </div>
+
+        <figure class="shape-change">
+            <img src="../Assets/istockphoto-1381637603-612x612.jpg"/>
+        </figure>
+    </body>
+</html>

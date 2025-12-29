@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter your name</p>
+    <input type="text" id ="name">
+    <p>Click this button to set it to the local storage</p>
+    <input type="button" value="Set data" onclick="setItem()">
+    <p>Open webpage in another tab</p>
+    <P>Click this button to get from the local storage</P>
+    <input type="button" value="get data" onclick="getItem()"> 
+    <p>Close this page and open again and click 'get data'</p>
+    <input type = "button" value = "Remove" onclick="removeItem()">
+    <script>
+        function setItem(){
+            if (typeof Storage != 'undefined'){
+                let name = document.getElementById('name').value
+                localStorage.myName=name
+            }
+        }
+        function getItem(){
+            if(typeof Storage != 'undefined'){
+                alert(localStorage.myName)
+            }
+        }
+        function removeItem(){            
+            localStorage.removeItem('myName')
+        }
+    </script>
+</body>
+</html>

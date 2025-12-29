@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flexWrapper{
+            display: flex;
+            background-color: aqua;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+        }
+        .flexItem{
+            background-color: red;
+            display: flex;
+            height: 100px;
+            width: 200px;
+            border: 1px solid black;
+            flex : 1;
+        }
+        .flexOne{
+            flex: 2 0 auto;
+        }
+        .flexTwo, .flexThree{
+            flex: 1 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexWrapper">
+        <div class="flexItem  flexOne">I am a content box</div>
+        <div class="flexItem flexTwo">I am a content box</div>
+        <div class="flexItem flexThree">I am a content box</div>
+    </div>
+</body>
+</html>

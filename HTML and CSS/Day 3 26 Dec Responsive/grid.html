@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .firstGrid{
+            display: inline-grid;
+            background-color: yellowgreen;
+            grid-template-rows: 200px 200px;
+            grid-template-columns: 200px 200px;
+            grid-gap: 10px;
+            /* align-items: center;
+            justify-items: center; */
+        }
+        .gridItem1{
+            grid-row: 1;
+            grid-column: 1;
+        }
+        .gridItem2{
+            grid-row: 2;
+            grid-column: 1;
+        }
+        .gridItem3{
+            grid-row: 1;
+            grid-column: 2;
+        }
+        .gridItem4{
+            grid-row: 2;
+            grid-column: 2;
+        }
+        [class^="gridItem"]{
+            outline: 3px solid maroon;
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="firstGrid">
+        <div class="gridItem1">1</div>
+        <div class="gridItem2">2</div>
+        <div class="gridItem3">3</div>
+        <div class="gridItem4">4</div>
+    </div>
+</body>
+</html>

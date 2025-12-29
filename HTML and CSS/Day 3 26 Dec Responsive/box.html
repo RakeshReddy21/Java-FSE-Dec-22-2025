@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flexWrapper{
+            background-color: aqua;
+            display: flex;
+            height: 200px;
+            width: 400px;
+            align-items: center;
+        }
+        .flexItem{
+            background-color: chocolate;
+            display: flex;
+            height: 100px;
+            width: 200px;
+            align-self: flex-start;
+        }
+        .alignSelf{
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexWrapper">
+        <div class = "flexItem">I am a content box</div>
+        <div class = "flexItem alignSelf">I am a content box</div>
+        <div class = "flexItem">I am a content box</div>
+    </div>
+</body>
+</html>

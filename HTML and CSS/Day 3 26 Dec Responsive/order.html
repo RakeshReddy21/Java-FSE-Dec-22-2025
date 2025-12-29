@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flexWrapper{
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+        }
+        .flexItem{
+            display: flex;
+            align-items: center;
+            min-height: 6.25rem;
+            padding: 1rem;
+        }
+        .flexHeader{
+            background-color: chocolate;
+            order: 1;
+        }
+        .flexSideOne{
+            background-color: bisque;
+            order: 2;
+        }
+        .flexHContent{
+            background-color: chartreuse;
+            order: 3;
+        }
+        .flexSideTwo{
+            background-color: cadetblue;
+            order: 4;
+        }
+        .flexFoother{
+            background-color: chocolate;
+            order: 5;
+        }
+        @media (min-width: 30rem ){
+            .flexWrapper{
+                flex-flow: row wrap;
+            }
+            .flexHeader{
+                width: 100%;
+            }
+            .flexHContent{
+                flex: 1 0 auto;
+                order: 3;
+            }
+            .flexSideOne{
+                width: 150px;
+                order: 2;
+            }
+            .flexSideTwo{
+                width: 150px;
+                order: 4;
+            }
+            .flexFoother{
+                width: 100%;
+                order: 5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flexWrapper">
+        <div class="flexItem flexHeader">I am a content box in header</div>
+        <div class="flexItem flexSideOne">I am a content box in Side One</div>
+        <div class="flexItem flexHContent">I am a content box in Content</div>
+        <div class="flexItem flexSideTwo">I am a content box in Side Two</div>
+        <div class="flexItem flexFoother">I am a content box in Footer</div>
+</body>
+</html>

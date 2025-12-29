@@ -1,0 +1,315 @@
+Dec 22 2025 --> Linux commands, Shell scripting, Git
+
+mkdir File Name --> Creates a new folder in the current location
+ls --> To show all the files in current folder
+cd path --> Navigates to the folder
+cd path/path1 
+cd .. -->Move to back 
+cd ../.. 
+pwd --> present working directory
+who --> Gives the name date and time
+whoami --> gives the username
+; --> to enter multiple command we can use semi-colon ";" --> Date ; who
+su --> swith user 
+clear --> To clear previous commands
+uname --> OS name
+uname -r --> gives the linuc terminal information
+uname -a --> Gives all the information
+rmdir --> remove the directory
+touch FileName.txt --> To create a file 
+echo 'Hello World' > commands.txt --> > and < symbols shown as predirection signals
+echo 'Hello World' >> commands.txt --> By using >> the text will appends into the file
+cat FileName.txt --> We can see every thing in the file
+vi FileName.txt --> To enter the multiple things in a single file --> ;wq --> To save the file
+wc FileName.txt --> Gives no.of lines no.of words and no.of characters
+code file.txt 
+linuxcmds(current) mv linuxcmds/file1.txt linux --> To move one file to another folder
+ls -l --> Gives additional info of the file
+grep directory file.txt --> To check the directory workd in the file --> global regular expression p...
+sort filename.txt --> It will sort and shows but it will not update in the original file
+sort -r filename.txt --> It will sort in reverse direction (Descending)
+ps --> To lsit of the processer running
+touch hello.sh --> shell scripting
+
+
+
+
+
+                        Shell Scripting
+
+To write all the commands and run it as a file 
+
+echo "Hello World"
+echo "Welcome to Linux"
+
+sh hello.sh --> To run the shell file
+
+# --> Commands
+#! (shebang) --> #! /bin/bash (path) --> The shebang line's purpose is to tell the operating system which interpreter should be used to execute the commands in the script
+
+In hello.sh file 
+
+    date
+    who
+    whoami
+
+by sh hello.sh --> It will executes all the commands
+
+chmod +x hello.sh --> To change the mode
+    ./hello.sh 
+
+
+Fuction.sh
+
+#!/bin/bash
+# Simple Linux functions
+
+name='Alice'
+hello(){
+    echo "Hello $name"
+}
+
+add(){
+    sum=$($2+$3)
+    echo "Sum of $1 and $2 = $sum"
+}
+
+hello
+add $1 $2
+
+sh/bash function 2 5 --> $1 will be 2 and $ 5 will be the 5 
+
+
+for i in 1 2 3 4 5
+do echo "Number : $i"
+done
+
+list = ("Pen" "Pencil" "box")
+echo "All items : ${list[0]}"
+for item in "${list[0]}"
+do 
+echo "$item"
+done
+
+
+
+
+                        Git
+
+git init --> To Initialize the repo
+git status
+git add .
+git commit -m "Message"
+git log --> Gives the history of the repo
+git push 
+
+
+
+
+
+
+
+Dec 23 2025 --> HTTP, HTML
+
+
+HTTP --> Hypertext Transfer Protocol
+
+
+It is a client-server model.
+
+
+URL Parameters --> Will be having the folder types Parameters
+Query Parameters --> ?....
+
+
+To pass the request --> Header and request body
+
+
+HTTP request methods --> Get, Connect, Delete, put, patch, Head, post
+
+by deafult it will be get method
+
+
+localization and Globalization
+
+cors --> cross origin resourse sharing
+
+http status codes
+
+100 - 199 --> Informational responses
+200 - 299 --> Success responses
+300 - 399 --> Redirection responses
+400 - 499 --> Client error responses
+500 - 599 --> Server error responses
+
+content security policy 
+
+HTTP Life cycle --> Request, Response, Connection
+
+Request --> Client --> Server
+Response --> Server --> Client
+Connection --> Client --> Server
+
+Cookies --> To store the data in the browser --> Temporary cookies and Permanent cookies
+
+
+
+                    HTML --> Hypertext Markup Language
+
+XML --> XML is all about the data.
+HTML --> HTML is all about how it looks like.
+
+
+HTML5 --> HTML + CSS + JavaScript
+BOM (Broswer Object Model) --> Navigartor, History, DOM 
+
+aside tage --> To add the side content 
+
+semantic tags --> are the tags which are having the meaning of the content. like <h1>, <p>, <a>, <img> etc..
+
+main tag --> To add the main content of the page --> It should have the core content of the Document. and also we should try to use only one main. If we use multiple main tags there will no errors.
+article tag --> A component containsof additional information Which can be used multiple times.
+
+
+CSS --> Cascading Style Sheets --> Internal CSS, External CSS, Inline CSS
+
+audio tag --> To add the audio content 
+    <audio src="audio.mp3" controls></audio>
+video tag --> To add the video content 
+    <video src="video.mp4" controls></video>
+
+
+
+
+
+
+Day 3 Dec 24 2025 --> HTML, CSS, webSQL database, Web storage
+
+
+Web storage --> cookies, Local storage and Session storage 
+
+Cookies --> It can store small amount of data and also user can delete/disable the cookies.
+
+indexDB 
+
+Geolocation --> To get the location of the user
+
+CSS --> Cascading Style Sheets --> Internal CSS, External CSS, Inline CSS
+
+CSS - Delecration --> property : Value
+
+Element selectors --> Tag name 
+ID --> #
+class --> .
+atributes 
+Pseudo-class --> :
+Pseudo-elements --> (::)
+
+
+
+em --> 16px (in desktop), 12px (tablet browser)
+rem --> Relative to the root element or parent
+
+CSS Colors
+1. Color name
+2. RGB --> Specifies combination of Red, Blue and Green --> value for opacity can also be Specifies
+3. HSL --> Specifies amount of Hue, Satuartion and Lightness
+4. HSLA --> Specifies amount of use, Satuartion and Lightness, Plus amount of opacity
+
+
+Box model --> 
+
+
+ins tag 
+
+
+
+Day 4 Dec 26 2025 --> Responsive Web design
+
+proprietary meta tag called the viewport
+
+
+Media Queries --> 
+    @media screen and (min-width: 1024px) and (max-width: 1200px)
+    @media screen and (orientation : Lanscape) and (min-width: 800px)
+
+    <link rel = "stylesheet media = screen and (orientation:potrait) and (min-width:800px) href = 800wide-potrait-screen.css/>
+
+what can Media Queries test for --> 
+
+    width : viewport width
+    height: viewport height
+    device-width : The screen heigh of a device
+    orientation
+    aspect-ratio : 16/9 --> The ratio of width to height based upon viewport width and height
+    Color
+    color-index 
+    resolution
+    grid
+
+@media (hover){}
+@media (prefers-color-scheme:dark)
+
+Flexible, Flexible images, Layouts
+
+Fluid layouts --> better than fluid layout flexbox is better --> Grid is better than flexbox
+
+
+Flex box 
+    --> It can be easily vertically center contents
+    --> It can change the visual order of elements
+    --> It can automatically space and align elements within box, automatically assigning available between them.
+    -->Items can be laid out in a row and also show in the reverse direction
+
+display: flex --> The flex box
+flex --> The flex property
+    Flex-grow
+    flex-shrink
+    flex-basis
+
+flex-grow --> The amount. in relation to the other flex items, the flex item can grow when free space is available
+flex-shrink --> is the amount the flex item can shrink, in relation to the other flex items, when there is not enough space
+flex-basis --> Is the basis size the flex item is sized.
+flex-flow --> row  wrap is a short cut for flex-direction and flex-wrap
+
+
+Grid
+
+explicit grid
+implicit grid
+
+1. Set up a grid
+    grid-template-rows
+    grid-template-columns
+    grid-auto-rows
+    grid-auto-flow
+
+
+Day 5 Dec 27 2025 --> Agile, Animation, Transition
+
+
+
+Agile Methodlogy
+
+Some agile methods--> Rapid Application Development
+Incremental SDLC
+Scrum
+Extreme Progrmaing
+
+
+
+Transitions
+
+
+2D and 3D Transforms
+
+Animate
+
+
+
+Day 6 Dec 29 2025 --> JavaScript
+
+
+
+JavaScript
+
