@@ -39,12 +39,7 @@ for(i = 1; i <= 5; i++){
 for(i = 1; i<=5; i++){
     res = ""
     for (j=1;j<=5;j++){
-        if(j==1){
-            res = res + i
-        }
-        else{
-            res = res + '*'
-        }
+        res = res + j
     }
 
     console.log(res)

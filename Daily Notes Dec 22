@@ -776,3 +776,61 @@ Day 7 Dec 30 2025 --> Javascript, functions
 If we write the function name in capital case --> It will be consider as an constructor
 FUnction name will be written in the camel case.
 
+
+Anonymous functions --> The function without a name is called anonymous function.
+
+let x = function(){
+    console.log("anonymous function")
+}
+x()
+
+Method overloading
+
+--> The function with the same name but different parameters is called method overloading.
+
+
+
+Rest operator --> ...values
+
+Rest operator will store the all the values in the array.
+
+
+function max(...values){
+    // console.log(values);
+    var large = values[0];
+    for (let i=0;i<values.length;i++){
+        if(values[i] > large){
+            large = values[i]
+        }
+    }
+    return large
+}
+
+console.log(max(2,5,7,9,34,2,5)) --> 34
+
+
+Call back function --> When a function is passed as an argument to another function.
+
+Closure --> When a function is returned from another function, the returned function has access to the variables of the parent function.
+
+function demo(){
+    let x = 10;
+    return function(){
+        console.log(x);
+    }
+}
+
+let y = demo();
+y(); --> 10
+
+
+IIFE --> Immediately Invoked Function Expression --> It is a function that is executed immediately after it is defined.
+
+(function demo(){
+    console.log("hello");
+})();
+
+
+prototype --> It is a property of the function that allows us to add new properties and methods to the function.
+
+DOM --> Document Object Model

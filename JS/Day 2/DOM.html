@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Selectung Elements</h1>
+    <div id = 'one' class="example">Hi !</div>
+    <div id = 'two' class="example">From div 2</div>
+    <div id = 'three' class="example">Hi from 3rd div</div>
+    <input type="button" value="Click me" onclick="demo()">
+    <script>
+        function demo(){
+            console.log(document.getElementById('two').innerText)
+            console.log(document.getElementsByTagName('div').item(0).innerText)
+            console.log(document.getElementsByTagName('div').namedItem('three').innerText)
+            console.log(document.getElementsByTagName('div'))
+            console.log(document.getElementsByTagName('h1'))
+            console.log(document.getElementsByClassName('example'))
+            console.log(document.querySelector('h1').innerText)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height:30px;
+            width:300px;
+            background-color: grey;
+        }
+    </style>
+    </head>
+    <body>
+    <div id = 'red'></div>
+    <div id = 'green'></div>
+    <div id = 'blue'></div>
+    <div id = 'yellow'></div>
+    <div id = 'purple'></div>
+    <div id = 'orange'></div>
+    <div id = 'brown'></div>
+    <input type="button" value="Rainbowify" onclick="rainbowify()">
+    <script>
+        function rainbowify(){
+            let divs = document.getElementsByTagName('div')
+            for(let ele of divs){
+                ele.style.backgroundColor = ele.id
+            }
+        }
+    </script>
+</body>
+</html>
