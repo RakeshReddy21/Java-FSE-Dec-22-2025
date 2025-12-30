@@ -769,3 +769,10 @@ console.log(str2); // lo wo (the ending letter will not be included)
 
 
 slice can print the negetive values. 
+
+
+Day 7 Dec 30 2025 --> Javascript, functions
+
+If we write the function name in capital case --> It will be consider as an constructor
+FUnction name will be written in the camel case.
+
