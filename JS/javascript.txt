@@ -1,0 +1,2399 @@
+console.log("helloworld")
+
+// var let const
+var a; // delectration
+a=5; //assigning
+a=10; //re-assigning
+var b=10; //intialisation
+var b=15; //re-inistilsation
+console.log(a,b);
+
+// with var re-dec, re-ass, re-inital
+// with let can't re-declare, re-assign, re-intialise
+// let x; //decleartion it can't re-declare 
+
+
+// x=10;
+// // x=15;
+// console.log(x);
+
+const z=6;
+console.log(z);
+// const doesn't allow only decleration, it will allows inistialization always.
+
+let k;
+console.log(k)
+// if we declare a variable without assigning any value to it, then it will contains undefined by default
+// if we try to access a variable without declaring then it throws a reference error like is not defined.
+
+let ss=4;
+console.log(ss)
+console.log(4)
+
+console.log(typeof typeof ss)
+// console.log(4)
+
+console.log(undefined+undefined) // NaN
+console.log(undefined+2) //NaN
+console.log(typeof undefined) //undefined
+
+var ee,bc=6;
+console.log(ee,bc); // undefined 6
+
+
+Saturday-03/08/2024
+
+// data types are 2 types
+// primitive and non-premitive
+// In primitive there are different types
+
+// Primitive datas are
+// 1. Usually stores single value only
+// 2. THis are immutable{means we can't change the value once we assigned}
+// 3. They can be access by its value
+// 1.Number
+// 2.String
+// 3.Boolean
+// 4. undefined -- We are not assigning any value so by defualt it will be present
+// 5.null -- we are assigning a empty value wantedly
+// and optional types are bigint and symbol
+
+// non-primitive 
+// 1. It can hold multiple values into a single variable
+// 2. this is mutable
+// 3. They can store by there Reference/Instance/address in the memory.
+// 4. access them with the refernce
+// It will not update the value in same memory allocation it will create the another memeory allocation
+
+// 1.array -- We can store same or different types of data in single array.--> [ ] --> access with the indexes
+// 2.object -- We can store key-value pairs. --> { } --> access with the help of keys.
+
+
+console.log(2+"50"); --> 250 //implicit type converstion
+console.log("to"+"to"); --> toto //implicit type converstion
+
+
+let x1="33"
+
+console.log(typeof x1);
+
+let y1=Number(x1) // number is called number-constructor and y1 is extenstion
+
+console.log(typeof y1); --> string, number // this will changes the string to number
+
+let r2=Number("hello")
+console.log(r1); //NaN
+
+let e1=Boolean(2) // boolean-constructor
+console.log(typeof e1); // boolean 
+
+// same like string-constructor will be used 
+
+array:
+
+
+let arr=[1, 2, "hello", true]
+console.log(arr);
+console.log(arr[2]);
+console.log(arr.length);
+
+object:
+
+let obj={
+    name:"John",
+    age:21,
+    city: "New York",
+    address:{
+        street:"123 Main St",
+        city:"New York",
+        state:"NY" 
+    }
+};
+console.log(obj)
+
+console.log(obj.name)  //dot notation
+console.log(obj['name']);  //string notation
+
+
+
+
+05/08/24-- Monday--(operators)
+
+let arr=[1,44,22,55,667,8,4,465,34];
+// n=arr.length
+console.log(arr[arr.length-2]);
+
+obj={
+    name:"John",
+    age: 22,
+    city:"New York",
+    // skills: [python,[html, css]]
+}
+// console.log(obj.skills);
+
+console.log("my name is " + obj.name + "and" + "my age is"); --> my name is Johnandmy age is
+console.log(`my name is ${obj.name} at ${obj.age}`); --> my name is John at 22
+
+Operators
+
+1.assignment--> addition, subraction, multiplication, division, modulus, increment(pre and post increment), decrement
+
+let a=3555;
+let b=2344;
+console.log(`addition of a and b is ${a+b}`); --> x=x+5 or x+=5 both are same similar to all operators
+console.log(`Subraction of a and b is ${a-b}`);
+console.log(`Multiplication of a and b is ${a*b}`);
+console.log(`Division of a and b is ${a/b}`); // '/' this will returns quotient
+console.log(`modulus of a and b is ${a%b}`); // '%' returns remeinder
+console.log(`increment of a and b is ${++a}`); // increment will be 2 ways 1.pre 2.post increment
+//  this statement is post increment 
+// console.log(a++); // pre increment
+let x=--a;
+console.log(x, a); //decrement pre and post will be there
+
+2. comparison operators
+ == -> equal to // it checks only value
+ =! --> not equal to 
+ === --> checks the both value and it type
+ !== --> checks the both value and it type
+ greater than 
+ less than 
+ greater than or equal to
+ less than or equal to
+
+ let x=2;
+let x1="2"
+console.log(x==x1); true
+console.log(x===x1); false
+console.log(x!=x1); false
+console.log(x!==x1); true
+
+3. string operators--> concatination(+), contate assign(+=)
+
+let str1="welcome"
+let str2="to world"
+console.log(str1+str2); // return welcometo world
+console.log(str1+="chennai"); // returns welcomechennai
+console.log(str1+="hyd"); //returns welcomechennaihyd
+
+4. logical operators
+
+&& --> and
+|| --> or
+! --> not
+
+// in conditional we used to check only one statement in logical op we can check multiple conditions
+
+let x=2;
+let y=3;
+console.log(x<2 && y>2); //false
+console.log(x<2 || y>2); //true 
+console.log(x!=3); //true
+console.log(x!=2); //false
+console.log(!(x<2 || y>2)); //false
+
+5. conditional operators
+Ternary(?:) --> //check statement ?"true block" : "false block"
+optional chain(?.) --> //by using optional chain it will skills and goes to another statement
+nulish(??) --> // if we get error or undefined instead of that we can print our own by using nulish
+
+
+
+4<15?"true statement":"false statement"
+
+// let x=5;
+// let op=(x!=5)?"true statement":"false statement";
+// console.log(op); // false statement
+
+let x=5;
+let op=(x==5)?"true statement":"false statement";
+console.log(op); // true statement
+
+obj={
+    fav_clr:{
+        clr1:"red",
+        clr2:"yellow"
+    }
+}
+console.log(obj.skills?.primary, obj.gender) //by using optional chain it will skills and goes to another statement
+console.log(obj.fav_clr.clr1); //red
+// console.log(obj.fav_clrs.clr1); // error
+console.log(obj.fav_clrs?.clr1); //undefined
+console.log(obj.fav_clr?.clr3); //undefined
+
+// if we get error or undefined instead of that we can print our own by using nulish
+
+let y=null;
+let a=y??"hello";
+console.log(a);  // hello
+
+
+
+
+06/08/24 -- Tuesday --- (Operators)
+
+
+
+6.Bitwise operators --> this will be used for th encryption and decryption
+Bitwise And (&)
+Bitwise or (|)
+Bitwise XOR (^)
+Nor(~)
+Left shift(<<)
+Right shift(>>)
+unsigned right shift(>>>)
+
+0001 - 1   0100 - 4   0111 - 7   1010 -10
+0010 - 2   0101 - 5   1000 - 8
+0011 - 3   0110 - 6   1001 - 9
+
+5&3    5|7
+0101   0101
+0011   0111
+----   ----
+0001   0111
+
+~6 = ~(0110) = 1001
+5<<2 = 00000101<<2 = 00010100
+//in these equation the digit will transfers from right to left as we are doing 2 shifths the 1st 2 zeros will go out
+and add at last.
+5>>2 = 00000101>>2 = 00000001 
+
+
+Alert the welcome page
+
+alert("hello world")
+
+let y=2+3
+alert(y)
+
+let x=+prompt("enter the value: ")
+console.log(x+x);
+console.log(typeof x);
+
+let x=+prompt("Enter the value of x")
+let y=+prompt("Enter the value of y")
+alert(x+y);
+
+
+conditional Statements
+
+if
+else
+else if
+switch
+
+
+if (<test>)  { statement;}
+
+var gpa = 3.25;
+if (gpa >= 3.0) {
+    alert("Good job!")
+} // Great job
+
+let x=0;
+if(x>9){
+    console.log("Hello")
+    console.log("world")
+}
+else{
+    console.log("true");
+}
+
+let pvrt=true;
+let isfrnd=true;
+if(pvrt){
+    if(isfrnd){
+        console.log("able to send msg");
+    }
+    else{
+        console.log("make friend");
+    }
+}
+else{
+    console.log("send msg direct");
+    
+}
+
+
+07/08/2024 -->  Wednesday
+
+
+let onetime=prompt();
+let y=Boolean(onetime);
+if(onetime==y){
+    console.log("msg will be deleted after 24 hours");
+}
+else{
+    console.log("msg can be forwarded");
+}
+
+
+08/08/24 -- Thursday
+
+else-If 
+
+// x=+prompt()
+// if(x>=90 && x<=100){
+//     console.log("You are a genius");
+// }
+// else if(x>=75 && x<=89){
+//     console.log("You are very good");
+// }
+// else if(x>=60 && x<=74){
+//     console.log("You are good");
+// }
+// else if(x>=35 && x<=59){
+//     console.log("You are average");
+// }
+// else if(x<35){
+//     console.log("You are very poor");
+// }
+
+let user=prompt();
+if(user=="admin"){
+    console.log("logged in as admin");
+}
+else if(user=="employee"){
+    console.log("logged in as employee");
+}
+else if(user=="super_admin"){
+    console.log("logged in as super_admin");
+}
+else if(user=="customer"){
+    console.log("logged in as customer");
+}
+else{
+    console.log("unauthorized");
+}
+
+switch
+
+switch(exp/value){
+    case 1:console.log("case one")
+    break;
+    case 2:console.log("case two")
+    break;
+    case 3:console.log("case three")
+    break;
+    default:console.log("deafualt case");
+}
+
+let fav_skills="angular_js";
+
+switch(fav_skills){
+    case "react_js": console.log("react_js is fav");
+    break;
+    case "angular_js": console.log("angular_js is fav");
+    break;
+    case "react_native": console.log("react_native is fav");
+    break;
+    case "node_native": console.log("node_native is fav");
+    break;
+    default: console.log("next_js is fav");
+}
+
+Loops:-
+
+If we want to execute a set of statements again and again till some extent, We will use loops.
+
+there are 5 types of loops
+
+1.for loop
+        for(inistialization;condition;increment/decrement){
+            //code to be executed
+        }
+
+        let x=0;
+        for(x=0;x<=6;x++){
+            // console.log(40*x); 
+            console.log(`40x${x}=${40 * (x)}`);  
+        }
+
+        let x=0;
+        for(x=0; x<=6; x++){
+            if(x%2==0){
+                console.log(x);
+            }
+        }
+2.while loop
+3.do while loop
+4.for in
+5.for of loop
+
+
+let x;
+for(x=1; x<=20; x++){
+    if(x%2==0 && x%3==0){
+        console.log(x, "fizzbuzz");
+    }
+    else if(x%2==0 && x%5 ==0){
+        console.log(x, "md");
+    }
+    else if(x%3==0 && x%5 ==0){
+        console.log(x, "md");
+    }
+    else if(x%2==0){
+        console.log(x, "fizz");
+        // console.log("fizz"); 
+    }
+    else if(x%3==0){
+        console.log(x, "buzz");
+    }
+    else if(x%5==0){
+        console.log(x, "md");
+    }
+}
+
+// let x;
+// for(x=20;x>0;x-=3){
+//     console.log(x);
+
+// } //20, 17, 14...5, 2
+
+
+09/08/24 -- Friday
+
+
+for(i=20, j=10; i>0 && j>3; i-=3,j-=2){
+    console.log(i,j);
+}
+// 20 10
+// 17 8
+// 14 6
+// 11 4
+
+for(i=20, j=10; i>0 && j>0; i-=3,j-=2){
+    console.log(i,j);
+}
+// 20 10
+// 17 8
+// 14 6
+// 11 4
+// 8 2
+// 5 0
+// 2 -2
+
+for(i=0;i<5;i++){
+    // console.log(i);//0,1,2,3,4
+}
+console.log(i); //5 because in the loop 5 is not less than 5 then it declares i as 5 and returns to 5
+debugger; --> will shows the each and every step in inspect(soruce(scope)).
+
+
+
+while Loop:- 
+
+    when depends only on conditions and don't know about the itreations
+
+once condition gets true the loop will gets. if false the loop will breaks.
+
+while(condition){
+    //code to be executed
+    increment/decrement
+}
+
+
+Do while:-
+
+    Atleast one condition will run donot change for the one-time without depending on increment and decrement.
+
+let i=0;
+do{
+    console.log("print", i)
+    i++
+}while(i<5)
+
+//print 0
+//print 1
+//print 2
+//print 3
+//print 4
+
+let x=0;
+let ispaid=true;
+do{
+    console.log("1st episode is free",x);
+    x++;
+}while(x<5&&ispaid)
+
+    // 1st episode is free 0
+    // 1st episode is free 1
+    // 1st episode is free 2
+    // 1st episode is free 3
+    // 1st episode is free 4
+
+
+usage of break and continue statements
+
+for(i=0;i<5;i++){
+    if(i==3) continue; //0,1,2,4
+    console.log(i);    
+        // break; //0,1,2,3
+        // continue; // 0,1,2,3,4
+}
+
+functions:-
+
+
+    total is called function defenition
+
+function f_name(x,y//(this are parameters))
+{
+    //code to be executed
+---> this is body
+}
+f_name(4,5//(arguments)); --> x=4, y=5  --> calling function/Grouping
+
+
+function table(x){
+    for(let i=1;i<=10;i++){
+        console.log(`${x}X${i}=${x*i}`);
+    }
+    return "hello" //It is like a gift for the loop //if we write anything after this that will not print.
+}
+table(3); 
+console.log(table(3));
+// 3X1=3
+// 3X2=6...
+// 3x10=30
+
+
+12/08/24 -- Monday 
+
+we can use same function with different arguments - recall a function.
+
+named function:-
+
+function demo(){
+    console.log("Hello");
+}
+demo();
+
+
+function demo1(z){
+    let x="naresh"
+    let y="welcome"
+    return x+y+z;
+}
+console.log(demo1("hello")) // nareshwelcomehello
+
+
+variable function or anonumus function:- 
+
+// function expression
+
+var x=function(){
+
+}
+var y=45;
+
+
+var x=function(){
+    console.log("welcome")
+
+}
+x;
+console.log(x)// [Function: x]
+console.log(x()) //welcome undefined
+
+var x=function(){
+    console.log("welcome")
+    return "hello";
+}
+console.log(x())
+
+// welcome hello
+
+arrow function:-
+
+const z=function(){
+
+}
+//arrow function
+const x=() => {}; // these => arrow indicates the arrow function
+
+
+const z=function(){
+
+}
+//arrow function
+const x=(x,y) => {let sum = x+y; console.log(sum)};
+
+x(4,5); //9
+x(5,60); //65
+
+named function
+
+function f_name() {0};
+
+anonymus function 
+
+const x = function() {};
+
+arrow function
+
+const z=x => {};
+
+Function with deafualt parameters
+
+function billing(item1, item2, gst=5){
+    let total=item1+item2;
+    let tax=((total/100)*gst);
+    let amt=total+tax;
+    console.log(amt);
+}
+billing(30,40)  //73.5
+
+
+
+function fizz(x, y){
+    for(i=x;i<=y;i++){
+        if(i%2==0 && i%3==0){
+            console.log(i,"fizzbuzz");
+        }
+        else if(i%2==0){
+            console.log(i, "fizz");
+        }else if(i%3==0){
+            console.log(i,"buzz");
+        }
+        // console.log(i);
+    }
+}
+fizz(20,40) 
+
+
+Decleration and scopes
+
+block --> 
+{
+    //content in this called block
+}
+
+decleartion--> it can be done in 2ways 
+     
+    Global
+    local --> block and function
+
+var x=5;
+var y=6;
+var z=10;
+console.log(x,y,z); //accessible outside of block or function
+
+{
+    console.log(x,y,z); //accessible inside of block
+}
+
+function demo(){
+    z=25;
+    console.log(x,y,z); //accessible inside of function.
+}
+demo() 
+
+
+{
+    var x=5;
+    console.log(x)
+}
+
+console.log(x)// var can be use here as x=5 but let can't use here 
+// var is having global scope
+// let is not having global scope
+//const is not having global scope, it has block scope
+
+
+function demo(){
+    var x=20;
+    console.log(x);
+}
+console.log(x); 
+demo()
+
+// in function var is not having global scope in function same for let and const
+
+// all var, let and const will have function scope
+
+        global s   block s    function s
+
+var     yes        no           yes
+let     no         yes          yes
+const   no         yes          yes
+
+named function
+anonymus function
+arrow function
+function with parameters
+function with/without parameters
+scopes --> global, local(block,function)
+decleartion --> global, local function
+
+
+
+13/08/24 -- Tuesday 
+
+call back
+higher order
+
+hoisting
+named functions vs anonymus vs arrow 
+
+Hoisting:- 
+
+we can host 3 var let and const
+console.log(a);
+let a=20; // we cannot access the value
+var a=30; //declartion at top with undefined value
+const a=40; // we cannot access the value
+
+
+a named function is hoisted with its value
+a anonymus/variable function and also for arrow function is hoisted with undefined value
+
+
+Strings:-
+
+strings are muttable
+types of constructing string
+
+var str1="Hello"
+var str2=new String("Hi") 
+console.log(str1,str2); // Hello [String: 'Hi']
+console.log(str1[0]) // H 
+console.log(str1[1]) // e
+
+for(i=0;i<=str1.length;i++){
+    console.log(str1[i]);
+}
+//
+H
+e
+l
+l
+o
+
+for(i=str1.length-1;i>=0;i--){
+    console.log(str1[i]);
+}
+//
+o
+l
+l
+e
+H
+
+14/08/2024 -- Wednesday 
+
+String Methods: 
+
+string length()  
+
+.length()
+
+string char():-
+
+.at() --> we can give negetive value which prints from last of the word
+.charat() --> It will allow only postivie index.
+.charcodeat() --> It gives UTF-16 code/ASCII values, allows only postivie indexes 
+[] --> It will allow only postivie index.
+
+slice():-
+.slice() --> It will return a new string, does not change the original string.
+.slice(start) --> It will return a new string from the start index to the end of the string
+.slice(start,end) --> It will return a new string from the start index to the end index of the string.
+
+let str1="Hello world";
+let str2=str1.slice(3,8);
+console.log(str2); // lo wo (the ending letter will not be included)
+
+.slice(start,end) --> In this while using indexes the starting index should be less than ending index.
+
+
+slice can print the negetive values. 
+
+substring():-
+.substring() --> There will be no change compare to slice but substring will not print with negetive values.
+If we give negetive value it will consider it as zero '0' only.
+
+
+substr():-
+.substr(start,length of the string)
+
+str1="somthing".substr(2,5);
+console.log(str1); //omth
+
+concat():-
+
+.concat()
+
+let str1="hello".concate("hi");
+console.log(str1); //hellohi
+
+let str1="hello".concate("hi","welcome");
+console.log(str1); //hellohiwelcome
+
+Trim():-
+.trim() --> It will remove the leading and trailing spaces from the string.
+let str1="   hello   ";
+console.log(str1.trim()); //hello
+
+Trimstart(),TrimEnd():- Will remove the starting space and ending spaces only
+
+padding:-
+.padStart() --> It will add the spaces at the starting of the string.
+.padEnd() --> It will add the spaces at the ending of the string.
+
+let str1="x".padstart(4,"h"); // upto filling 4 length h will add we can add white space or anyother characters.
+console.log(str1); //hhhx
+
+.padend()
+similar like padstart()
+
+
+Repeat():-
+.repeat() --> It will repeat the string for the given number of times.
+let str1="hello".repeat(3);
+console.log(str1); //hellohellohello
+
+Replace():-
+.replace() --> It will replace the specified string with the another string.
+
+let str1="hello".replace("hello","world"); 
+console.log(str1); //world
+
+let str2="hello" "welcome" "hello"
+let str3=str2.replace("hello","bye")
+console.log(str3); // bye welcome hello  
+
+it will replace the 1st match only.
+it is a case sensitive if we use /i flag then it will become case insensitive
+
+let str2="Hello" "welcome" "hello"
+let str3=str2.replace("/hello/i","bye")
+console.log(str3); // bye welcome hello
+
+
+
+replaceall():-
+.replaceAll() --> It will replace all the matches of the string with the another string.
+
+let str2="hello" "welcome" "hello"
+let str3=str2.replaceAll("hello","bye");
+console.log(str3); // bye welcome bye
+
+/g  for case insensitive 
+
+
+Split():-
+.split() --> It will split the string into the array of strings.
+let str1="hello world";
+let str2=str1.split(" ");
+console.log(str2); //["hello","world"]
+
+
+let str1="hello world";
+let str2=str1.split("");
+console.log(str2); 
+//[
+  'h', 'e', 'l', 'l',
+  'o', ' ', 'w', 'o',
+  'r', 'l', 'd'
+]
+
+string indexof():-
+.indexOf() --> It will return the index of the first occurrence of the specified value.
+let str1="hello world";
+let str2=str1.indexOf("world");
+console.log(str2); //6 //if not there it will gives -1.
+
+in this we don't worry about the case sensitive
+it will accept 2nd index and as index where to search from
+
+lastindexof():- is similar to find from last.
+let str1="please locate the world of location";
+let str2=str1.lastIndexOf("loc");
+console.log(str2); // 13 
+
+
+20/08/2024 -- Tuesday
+
+search()
+
+let str="hii hello world"
+let str2=str.search("hello");
+console.log(str2); // 4
+
+
+Array Methods:- 
+
+array Length:
+
+array string:-
+
+array at:- 
+
+let arr=["hi","368409","ejfvewkl"]
+console.log(arr[3]); 
+console.log(arr.at(3)); //ejfvewkl
+
+push():-
+add element at the end of the array
+let arr=[1,2,3];
+arr.push(4);
+console.log(arr); // [1, 2, 3, 4]
+
+push method will add elements into an ending.
+it will returns length of the array.
+
+let arr=[]
+let x=arr.push("jdsb",9,23);
+console.log(x); //3 --> length of the updated array.
+
+
+pop():-
+remove the last element of the array
+let arr=[1,2,3,4,5];
+arr.pop();
+console.log(arr); // [1, 2, 3, 4] 
+
+pop will removes the element from array at last index and returns popped out element.
+it will return undefined if array is empty.
+
+
+shift()
+remove the first element of the array. 
+let arr=[1,2,3,4,5];
+arr.shift();
+console.log(arr); // [2, 3, 4, 5]
+
+
+
+
+21/08/24 -- Wednesday 
+
+
+
+arr=["hello","World","this","is","a","test"]
+arr1=[],j=0;
+for(i=0;i<arr.length;i++){
+    if(arr[i].startsWith("h")){
+        arr1[j]=arr[i];
+    }
+    
+}
+console.log(arr1)
+
+
+arr=["hello","World","this","is","a","test"]
+for(i=0;i<arr.length;i++){
+    if(arr[i].includes("o")){
+        console.log(arr[i])
+    }
+} // hello world
+
+arr=["hello","World","this","is","a","test"]
+for(i=0;i<arr.length;i++){
+    if(!arr[i].includes("o")){
+        console.log(arr[i])
+    }
+}//this is a test
+
+
+arr=["hello","World","this","is","a","test"]
+for(i=0;i<arr.length;i++){
+    // if(!arr[i].includes("o")){
+        console.log(arr[i].at(0))
+    // }
+} //h W t i a t
+
+join():-
+we can join any thing and makes new string
+join() is a string method that returns a string concatenated with all elements of an array.
+arr=["hello","World","this","is","a","test"]
+let x=arr.join(" - ")
+console.log(x) // hello - World - this - is - a - test 
+
+split():- 
+it is used to convert string to array
+
+
+delete()
+
+arr=[1,2,3,4,5];
+delete arr[3];
+console.log(arr) // [ 1, 2, 3, <1 empty item>, 5 ]
+console.log(arr.length) // 5
+
+concate():-
+it is used to join two or more arrays together
+arr1=[1,2,3]
+arr2=[4,5,6]
+console.log(arr1.concat(arr2)) //[ 1, 2, 3, 4, 5, 6 ]
+
+
+flat():-
+it is used to convert multidimensional array to one dimensional array
+arr1=[[1,2],[3,[4],5,[6,7],8]]
+let x=arr1.flat()
+console.log(x) // [ 1, 2, 3, [ 4 ], 5, [ 6, 7 ], 8 ]
+let y=arr1.flat().flat()
+console.log(y) // 
+[
+  1, 2, 3, 4,
+  5, 6, 7, 8
+]
+
+slice():- 
+it is used to extract a section of an array and returns new array
+arr=[1,2,3,4,5,6,7,8,9]
+console.log(arr.slice(3,6)) // [ 4, 5, 6 ]
+
+splice():-
+it is used to add or remove items from an array
+
+arr=[1,2,3,4,5,6,7,8,9]
+arr.splice(2,1) --> this (2,1) starts from 2nd index and removes the 1 element 
+console.log(arr) 
+// [
+  1, 2, 4, 5,
+  6, 7, 8, 9
+]
+
+arr=[1,2,3,4,5,6,7,8,9]
+arr.splice(2,1 ,10,11,12) --> this (2,1) starts from 2nd index and removes the 1 element add elements
+console.log(arr) 
+// [
+  1, 2, 10, 11, 12,
+  4, 5,  6,  7,  8,
+  9
+]
+
+tospliced():-
+it is used to add items to an array without removing any items
+arr=[1,2,3,4,5,6,7,8,9]
+x=arr.toSpliced(2,2,10,11,12)
+console.log(x)
+// [
+  1, 2, 10, 11, 12,
+  5, 6,  7,  8,  9
+]
+
+indexof():-
+
+arr=[1,2,3,4,5,6,7,8,9]
+console.log(arr.indexOf(5)) // 4 --> 5 is at 4th index
+
+includes():- 
+
+arr=[1,2,3,4,5,6,7,8,9]
+console.log(arr.includes(5)) // true --> 5 is in the array
+
+
+callback Function:- 
+it is a function that is passed as an argument to another function
+function demo(){  --> demo is higher oreder function
+
+}
+function sample(){ --> sample is call back function
+
+}
+demo(sample())
+
+11/08/2024 -- Thurday
+
+Iteration elements
+
+cover every element--> for every element we need to perform a specific task. 
+
+function demo(){
+    x(); --> call back function
+}
+function sample(){
+
+}
+demo(sample())
+
+array itreation methods:- 
+
+
+map():- 
+arr=[1,2,3,4,5,6,7,8,9]
+arr.map(function(){
+    console.log("hello")
+})
+//hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+
+arr.map(()=>{console.log("i")})
+
+
+let arr=[1,2,3]
+arr.map((a,b,c)=>{console.log(a,b,c)})
+
+//1 0 [ 1, 2, 3 ] a will store value b will store index c will store array
+2 1 [ 1, 2, 3 ]
+3 2 [ 1, 2, 3 ]
+
+
+map method will returns the new array with same length of input array 
+
+let arr=[1,2,3]
+op=arr.map(()=>"i")  
+console.log(op) //[ 'i', 'i', 'i' ]     
+
+demo=()=>{}; --> return statement required
+demo=()=>  --> return statement not required
+
+
+
+foreach():- 
+it is used to iterate over an array and perform a specific task for every element in the array.
+arr=[1,2,3,4,5,6,7,8,9]
+console.log(arr.forEach((x,i)=>{
+    console.log(x,i)
+}))
+
+map method will return the new array with same length of input array.
+forEach won't returns anything. so there is no need to assign a variable to it.
+
+
+arr=[1,2,3]
+arr.forEach((a,b,c)=>{console.log(a,b,c)})
+// 1 0 [ 1, 2, 3 ]
+// 2 1 [ 1, 2, 3 ]
+// 3 2 [ 1, 2, 3 ] 
+
+forEach will not manipulate the original array.
+
+
+filter():- 
+
+
+let arr=[5,3,2,9]
+arr.filter((a,b,c)=>{console.log(a>2)})
+
+true
+true
+false
+true
+
+we can filter the array. 
+
+every():- 
+
+will using this if all the conditions pass then only it will return true.
+
+let arr=[5,3,2,9]
+arr.every((a,b,c)=>{console.log(a==2)}) //false a>=2 --> true
+
+
+some():- 
+will using this if atleast one the conditions pass then only it will return true.
+
+let arr=[5,3,2,9]
+arr.some((a,b,c)=>{console.log(a==2)}) //true
+
+
+find():- 
+
+let arr=[5,3,2,9,1.2,1.3,1.4]
+arr.find((a,b,c)=>{console.log(a<2)}) //1.2 --> in this it will pass the 1st element
+
+let arr=[5,3,2,9,1.2,1.3,1.4]
+let x=arr.findIndex((a,b,c)=>a<2) //4
+console.log(x);
+
+
+23/08/24 -- Friday
+
+
+
+
+
+
+
+
+24/08/24 -- Saturday
+
+
+array sort():
+
+let arr=[6,2,5,4,3,0]
+arr.sort()
+console.log(arr) // [0,2,3,4,5,6]
+
+
+let arr=[30,22,145,114,848, 520]
+arr.sort((a,b)=>a-b); --> without using this we get [114,145,30,..] because this will takes as string and compares the 1st value 
+console.log(arr) // [0,2,3,4,5,6]
+
+arr.sort((a,b)=>b-a); --> for decresing order
+
+
+let arr=[6,2,5,4,3,0]
+arr.revere();
+console.log(arr) // [0,3,4,5,2,6]
+
+
+let arr=[6,5,4,7,2,9]
+arr.sort().reverse()
+console.log(arr) //[9,7,6,5,4,2]
+
+
+array of Objects :- 
+
+console.log(x[0].title) --> gives the title in the 0th index
+
+x.map((a)=>console.log(a.title)) --> gives title for all datas.
+
+x.map((a)=>console.log(`title:${a.title}`)) 
+
+
+
+26/08/24 --> Monday
+
+reduce():- 
+1st total value
+2nd start value
+3rd index 
+4th array 
+
+let arr = [1,2,3,4,5];
+arr.reduce(a,b,c,d)=> {
+    console.log(a,b,c,d)
+} 
+//  1 2 1 [ 1, 2, 3, 4, 5 ]
+undefined 3 2 [ 1, 2, 3, 4, 5 ] 
+  undefined 4 3 [ 1, 2, 3, 4, 5 ]
+undefined 5 4 [ 1, 2, 3, 4, 5 ]
+
+Objects:-
+
+let obj={
+    name:"harush",
+    role:"developer",
+    city: "hyd"
+}
+let x=Object.keys(obj)
+z=Object.assign(obj)
+y=Object.entries(obj)
+console.log(x,y,z)
+
+//[ 'name', 'role', 'city' ]
+[ [ 'name', 'harush' ],[ 'role', 'developer' ], [ 'city', 'hyd' ] ] 
+{ name: 'harush', role: 'developer', city: 'hyd' }
+
+delete obj.city
+console.log(obj) --> { name: 'harush', role: 'developer' }
+
+seal and freeze 
+
+in seal we can update the properties we can't in freeze 
+
+if we use seal we can't delete the properties from the object.
+we can't add properties into the object.
+we can update existing properties with new values.
+
+Freeze:- 
+
+if we use Freeze we can't delete the properties from the object.
+we can't add properties into the object.
+we can update existing properties with new values.
+
+
+
+let obj2=Object.create(obj1);
+
+create method will takes the main object as a prototype.. so we can't access them directly 
+
+obj2 will inherits the properties from obj1
+
+console.log(Object.getPrototypeOf(obj2));
+
+console.log(Obj1.hasOwnProperty("name") ) --> if name is there then it will gives true. 
+
+
+reduce reduce right keys values entries create seal freeze for in, for of delete,hasownproperties, getPrototypeOf 
+
+
+27/08/24 --> Tuesday 
+
+number and math methods date methods
+
+Number methods:- 
+
+toFixed():- 
+formatting numbers to a fixed decimal places 
+
+rounding off the multiple decimals to the fixed number of decimals 
+
+x=10.23455455
+let y=x.toFixed(2)
+console.log(y) //10.23
+
+parseInt() and parseFloat;- 
+converting string to integer or float integer 
+let x="1234"
+y=x.praseInt(x);
+console.log(typeof x)//number
+
+toPrecision():- 
+
+to formate a number for the required no.of digits
+
+let x=10.5748758574
+y=x.toPrecision(3)
+console.log(y) //10.6
+
+isInteger():- 
+checks if the number is integer or not
+let x=10.5
+console.log(Number.isInteger(x)) //false
+
+isFinite():-
+checks if the number is finite or not
+let x=10.5
+console.log(Number.isFinite(x)) //true
+
+
+math methods:-
+Math.abs():-
+returns absolute value of the number
+let x=-10
+console.log(Math.abs(x)) //10
+
+Math.ceil():-
+returns the smallest integer that is greater than or equal to the given number
+let x=10.5
+console.log(Math.ceil(x)) //11
+
+Math.floor():-
+returns the largest integer that is less than or equal to the given number
+let x=10.5
+console.log(Math.floor(x)) //10
+
+Math.round():-
+returns the number rounded to the nearest integer
+let x=10.5
+console.log(Math.round(x)) //11 if decimal is 5 or more than it will takes next number 
+
+Math.max():-
+returns the maximum value from the given numbers
+let x=10
+y=20
+console.log(Math.max(x,y)) //20
+
+Math.min():-
+returns the smallest of the given numbers
+let x=10
+let y=20
+console.log(Math.min(x,y)) //10
+
+let arr = [1,12,30,14,15]
+maxx=Math.max(... arr);
+minn=Math.min(... arr);
+console.log(maxx, "44") //30 1 44
+
+Math.pow():-
+returns the result of the number raised to the power of the given exponent
+
+console.log(Math.pow(10,4)) // 10,000
+
+Math.sqrt():-
+returns the square root of the given number
+
+console.log(Math.sqrt(16)) //4
+
+arr = [124,678,125,64,81,100]
+x=arr.map((a)=>(Math.sqrt(a)))
+
+console.log(x) // [
+  11.135528725660043,
+  26.038433132583073,
+  11.180339887498949,
+  8,
+  9,
+  10
+]
+
+Math.random():-
+returns a random number between 0 (inclusive) and 1 (exclusive)
+console.log(Math.random()):- 0.3038912112047363 
+
+
+x=Math.random()*100000
+console.log(Math.round(x))
+
+
+28/08/24 --> Wendesday
+
+Date methods ->  
+
+casing --> snake(all small), pascal(staring caps), camel(caps in middle)
+
+const date = Date();
+console.log(date) //Wed Aug 28 2024 11:48:44 GMT+0530 (India Standard Time) --> based on compiler local or global 
+
+Date()--> object
+
+const date = Date();
+const newD=new Date()
+console.log(newD) // //2024-08-28T06:30:40.723Z
+
+const newD=new Date()
+console.log(newD) 
+const getNewDate=newD.getFullYear();
+console.log(getNewDate) //2024
+
+const newD=new Date()
+console.log(newD) 
+const getNewDate=newD.getDate();
+console.log(getNewDate) //todays date 28
+
+const newD=new Date()
+console.log(newD) 
+const getNewDate=newD.getMonth();
+console.log(getNewDate)//7  (august is 7th month in js)
+
+const newD=new Date()
+console.log(newD) 
+const getNewDate=newD.toTimeString();
+console.log(getNewDate) //2024-08-28T06:37:46.898Z
+12:07:46 GMT+0530 (India Standard Time) 
+
+const newD=new Date()
+console.log(newD) 
+const getNewDate=newD.getTime();
+console.log(getNewDate) //1724827134368 --> longitude number 
+
+moment js and day js 
+
+
+const specificDate = new Date('2025-08-30'); or ('08-30-2025')
+console.log("specificdate",specificDate) //specificdate 2025-08-30T00:00:00.000Z
+
+
+const newD=new Date()
+const getNewDate=newD.getMinutes();
+console.log(getNewDate); 
+
+const newD=new Date()
+const getNewDate=newD.getHours();  //milliSeconds,getSeconds
+console.log(getNewDate);
+
+
+// setting date components 
+const date=new Date()
+date.setFullYear(2025); --> set is majorly for the update 
+console.log("set full year", date) //set full year 2025-08-28T07:11:07.975Z
+
+const date=new Date()
+date.setFullYear(2025);
+date.setMonth(11);
+date.setDate(30);
+console.log(date) //2025-12-30T07:13:28.936Z
+
+const futureDate = new Date()
+futureDate.setDate(futureDate.getDate()-7)
+console.log(futureDate)  // 2024-08-21T07:17:25.865Z -->  7 days ago from today
+
+
+//Range dates 
+
+
+const currentDate = new Date()
+const futureDate = new Date()
+futureDate.setDate(31)
+console.log(timeDiff) //259200000
+const timeDiff = futureDate - currentDate; // difference in milliSeconds
+const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)); --> converts to days 
+console.log(daysDiff) //3 
+
+
+const obj={
+    weekday: 'long', //long --> longitude
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+};
+const date = new Date()
+const formattedDate = date.toLocaleDateString('en-US', obj) 
+const formattedDate = date.toLocaleDateString(obj) --> for this 28/8/2024
+console.log(formattedDate) //Wednesday, August 28, 2024
+
+tolocalString()--> it takes 2 arguments 
+
+
+30/08/24-->Friday
+
+starting points of date methods as january 1st 1970
+
+.getSeconds
+.getMinutes
+.getHours
+.getMonth
+.getFullYear
+.getDate
+and etc..,
+
+
+Date.parse():- 
+Date.parse() parses a string representation of a date, and returns the number of milliseconds since January
+1, 1970, 00:00:00 UTC, according to the system's timezone
+to get milliseconds we will use this 
+
+it will converts string to milliseconds of time
+
+
+let x=Date.now()
+const dateString = '2024-08-06T12:34:56'
+let y1=Date.parse(dateString)
+console.log(y1) //1722927896000
+
+
+
+
+const todaysDateTimestamp= Date.now()
+
+const dateString = '2024-08-06T12:34:56' // -> convert this date into timestamp(milliSeconds)
+const custmTimestamp=Date.parse(dateString)
+
+console.log(custmTimestamp) //--> 1670272096000
+console.log(todaysDateTimestamp) //-> 1724998747128
+console.log((todaysDateTimestamp-custmTimestamp)/864000000) // --> 2.396927155092593
+
+
+set methods -> for updating the time
+
+.set Time():- 
+set time() method sets the time of the date object to the specified value, in the local time
+
+const dt = new Date('august 21,2024,02:57:00')
+
+
+const todaysDate=new Date()
+
+console.log(todaysDate)
+
+todaysDate.setTime(dt.getTime());
+
+console.log(todaysDate) //--> 2024-08-20T21:27:00.000Z
+
+toDateString():- 
+
+const st = new Date(1998,0,19,5,54,52,25);
+// const en = new Date(1998,0,19,01,54,52,25);
+const formatteddate = st.toDateString()
+console.log(formatteddate) //Mon Jan 19 1998
+
+
+
+02-09-2024 --> Tuesday --> DOM 
+
+DOM --> Document Object Model 
+
+DOM:- It helps to communicate the web page.
+--> it is like a web API 
+--> To make Dynamic webpages. 
+
+crud operators:- 
+
+create, read, update, delete --> operators
+
+
+document.write("hello world") --> write
+let x1 = document.getElementByTagName("h1")
+console.log(x1) --> read by tagname
+
+
+let x2 = document.getElementByClassName("head2")
+console.log(x2) --> read by class name  
+console.log(x2[0]) --> takes the index value.
+
+let x3 = document.getElementById("head1")
+console.log(x3) --> read by id
+
+let x4 = document.querySelector(".head1") --> these will get only 1st match 
+console.log(x4) --> read by class
+
+let x5 = document.querySelector("#head1")
+console.log(x5) --> read by id
+
+let x6 = document.querySelectorAll(".head1")
+console.log(x4) --> read by class --> these will return as array 
+
+let x7 = document.querySelectorAll("h1")
+console.log(x7) --> read by tagname --> returns all h1 tag elements
+
+// if we get elemnets using tagname/ classname the result will get in array.
+// if we get elements using id then the result will be single element. 
+
+
+let x=document.getElementById("myDiv")
+document.write(x.innerHTML) // It will prints exactly like h1 anyother
+document.write(x.innerText) //hello world Java --> it will not display the hidden content 
+document.write(x.textcontent) // it will gives the hidden content also 
+
+<h1 id="q1">  </h1>
+let q1 = document.getElementById("q1")
+q1.innerHTML = "Hello world" --> this adds on the webpage 
+q1.innerHTML = "<i>Hello world</i>" --> we can use tags also in innerHTML
+
+
+Getting attributes by javascript:- 
+
+<img>
+
+let img=document.getElementByTagName("img")
+img[0].setAttribute("src","./path of img");
+img[0].setAttribute("height","100");
+img[0].style.border="2px solid red"; 
+img[0].style.padding="20px"
+img[0].style.backgroundcolor="red";
+img[0].style.borderRadious="50%";
+img[0].setAttribute("class","image") --> this will assign class to the image
+img[0].setAttribute("id","img1") --> tis will assign id to the image as img1
+
+let myDiv = document.createElement("div") --> creates a div 
+console.log(myDiv)
+myDiv.style.height="120px"
+myDiv.style.width="120px"
+myDiv.style.border="2px solid red"
+
+document.body.appendChild(myDiv) --> It will creates on javascript in webpage
+
+let title = document.createElement("h1") 
+title.innerHTML="hello";
+
+myDiv.appendChild(title); --> displays on the above div 
+myDiv.style.display="flex";
+
+document.body.appendChild(title) --> it will creates a h1 on webpage with hello text
+
+
+03/09/24 --> Tuesday 
+
+To remove the items As 
+
+removeChild():-
+div1.removeChild(img1); --> these will remove the img1 in the div1.
+
+remove():-
+div1.remove(); --> this will remove the div1 from the webpage.
+
+
+let div1 = document.getElementById("myDiv")
+let img1 = document.getElementsById("img")
+div1.removeChild(img1)
+img1.remove()
+
+
+Events:- 
+ 
+types of events: -
+
+Mouse:- click, double click(ondblclick), mouseover, mouseout, mousemove,mousedown, mouseup 
+Keyboards:- keydown, keyup, keypress
+Form:- submit, change, focus, blur
+window:- load, resize, scroll, unload.
+
+
+ways of inserting events:-
+
+Inline events:- <button onclick="alert('Button clicked!')">Click Me</button>
+simple and easy to understand
+can lead to inline js making the code harder to maintain.
+
+
+
+
+<h1 id="head1" onclick="demo()">Click me</h1>
+
+function demo(){
+    let head1=document.getElementById("head1")
+    head1.style.color="red" 
+    head1.innerHTML="changed"
+    document.write("hello") --> by these the entire document will be changed
+}
+
+
+event listeners:- 
+
+synatx:- element.addEventListener(event, function, useCapture);
+
+exg:-  document.getElementById("myButton").addEventListener("click",function(){
+    alert("Button Clicked!");
+})
+
+
+<button id="btn">Clickme</button>
+let btn1=document.getElementById("btn");
+btn1.addEventListener("Click",demo());
+function demo(){
+document.body.style.backgroundColor="green"
+}
+
+btn1.addEventListener("click",function(){
+document.body.style.backgroundColor="blue"
+})
+
+btn1.addEventListener("click",()=>{
+document.body.style.backgroundColor="blue"
+})
+
+btn1.addEventListener("click",(e)=>{  
+console.log(e)
+document.body.style.backgroundColor="blue"
+})  e --> in this argument the information of the events.
+
+
+04.09.2024 --> Wendesday
+
+
+
+
+05/09/2024 --> Thursday
+
+Events:- 
+
+scroll event
+
+<script>
+        window.addEventListener("scroll",()=>{
+            document.body.style.backgroundColor="red"  --> while scrolling we get red as background color
+        })
+        window.addEventListener("scrollend",()=>{
+            document.body.style.backgroundColor="white" --> while ending of scrolling we get white as background color
+        })
+</script>
+
+
+window.addEventListener("load",()=>{
+alert("Hi")
+})
+
+
+Form events:- 
+
+we submit data from inputs 
+
+    <form onsubmit="demo()">
+        <input type="text" id="ip1">
+        <input type="submit">
+    </form>
+    <p></p>
+    <script>
+        function demo(){
+            let p=document.getElementsByTagName("p");
+            p[0].innerHTML="form submitted"
+        }
+    </script> --> for this the there will be limited time visibility of form submitted by deafualt
+
+<form onsubmit="demo()">
+        <input type="text" id="ip1">
+        <input type="submit">
+    </form>
+    <p></p>
+<script>
+        function demo(event){
+            event.preventDefault();
+            let p=document.getElementsByTagName("p");
+            p[0].innerHTML="form submitted"
+        }
+</script>  --> by using preventDefault it removes the deafualt nature.
+
+let form = document.getElementByTagName("form");
+form[0].addEventListener("submit",(event)=>{
+    event.preventDefault();
+    let p = document.getElementByTagName("p");
+    p[0].innerHTML="form Submitted"
+})
+
+
+<form onsubmit="demo()">
+        <input type="text" id="ip1">
+        <input type="submit">
+</form>
+
+let p= document.getElementByTagName("p")
+p[0].innerHTML=ip1.value
+
+    <form >
+        <input type="text" >
+        <input type="submit">
+    </form>
+    <p id="p1"></p>
+
+    <script>
+        let form=document.getElementsByTagName("form")
+        form[0].addEventListener("submit",()=>{
+            event.preventDefault();
+            let p=document.getElementById("p1")
+            let num=ip1[0].value;
+            if(num % 2 == 0){
+                p.innerHTML=`${num} is EVEN`;
+            }
+            else{
+                p.innerHTML= `${num} is ODD`;
+            }
+        })
+    </script>
+
+
+
+09/09/24 --> Monday
+
+Revison on functions 
+
+10/09/24 --> Tuesday
+
+
+event bubbling
+event capturing
+event propagation
+event delegation
+pure and impure functions 
+
+event bubbling --> 
+
+if i click the event at child both parent roots also triggered. 
+
+stopimmediatepropogation(); 
+
+when event travels from childs to parent(roots to parents) it is called event bubbling 
+
+the process is called event propagation
+
+when event travels from parent to child it is called event capturing
+
+
+
+event delegation --> 
+
+The idea is that if we have a lot of elements handled in a similar way, 
+then instead of assigning a handler to each of them – we put a single handler on their common ancestor
+
+
+IIFE --> (Immediately Invoked Function Expression)
+
+function defination and function invokation is required. 
+
+function defination and function invokation will be both side by side in same line.
+
+(function demo(){console.log("hello")})(); 
+
+we can't reuse the IIFE. 
+It can be use only in single time
+
+(function demo(a,b){console.log(a+b)})(10,20); --> //30
+
+IIFE anonymus --> (function(x,y){console.log("x+y")})(10,20) --> //30
+
+IIFE arrow function --> ((a,b)=>{console.log(a+b)})(10,20) --> //30 
+
+
+pure Function -->
+
+Given the same input, always returns the same output.
+Produces no side effects.
+
+
+12/09/24 --> Thursday
+
+
+regular expression
+
+regexp
+
+there are 2 ways in regexp --> 
+
+Literal notation --> new regex() 
+
+--> the methods used too check the input data with regexp(patterns/rules) --> test,match and exec 
+
+the regexp is used for the validation of forms.
+
+let pattern=/hello/; --> it is regex
+let input="welcome"  --> it is userinput
+let matched=pattern.test(input); 
+console.log(matched) // false 
+
+
+let pattern=/hello/; --> it is regex
+let input="hello"  --> it is userinput
+let matched=pattern.test(input); 
+console.log(matched) // true 
+
+By default regex is case sensitive we need to use for case insensitive eg :-  pattern=/hello/i;
+
+let pattern=/[1-5]apple/; --> because [1,2,3,4,5]apple 
+let input="2apple"
+let matched=pattern.test(input);
+console.log(matched) // true
+
+let pattern=/[a-z]{8}/; --> only alphabets with atleast length of 8 characters 
+let input="rakeshkonda"
+let matched=pattern.test(input);
+console.log(matched)
+
+let pattern=/^[a-z]{4,8}$/; --> characters should br minimum 4 and maximum 8
+let input="qwerty"
+let matched=pattern.test(input);
+console.log(matched) 
+
+
+let pattern=/[A-Z][0-9][a-z]/
+let input="aA9"
+let matched=pattern.test(input);
+console.log(matched) --> true 
+
+?=.*--> this will indicates the to presence anywhere in the string 
+
+let pattern=/(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])/
+let input="aA9"
+let matched=pattern.test(input);
+console.log(matched) --> true
+
+
+let pattern=/(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]){8}(?=.*[@$!%*?&])/ --> (?=.*[@$!%*?&]) --> special character
+let input="Rakeshkonda21@"
+let matched=pattern.test(input);
+console.log(matched) --> true 
+
+
+validate the college admission form using  regular expressions.
+ 
+1.roll num pattern(eg..23g21XXX)
+2.username should contain only alphabets
+3.mob num should contain only 10 digits
+4.password validation
+
+13/09/24 --> Friday 
+
+16/09/24 --> Monday 
+
+OOPS --> we can manage/manipulate a data of objects.
+
+prototype:- 
+
+
+
+19/09/24 --> Thursday
+
+BOM --> Browser Object Model
+
+DOM will comes under the BOM.
+
+Prompt and alert comes under the BOM of windows user input.
+
+Window --> location, history, screen, navigator and document. 
+
+alert and window.alert both are same similarly to the prompt/window.prompt
+
+winow.confirm --> it gives an alert if we click allow it stoes true value cancel means false.
+
+location.assign() --> it is a location object. --> we can change the location
+
+window.open()--> same purpose but it will open in new tab.
+window.close()-->it used to close the current window
+
+history.back() --> To move back of the history which we came from.
+history.forward() --> To move forward of the history which visited recently.
+
+history.go() --> To move to the specific history which we want to visit.
+history.go(-1) --> To move back of the history which we came from.
+history.go(1) --> To move forward of the history which visited recently.
+
+These all things will be stored in the history object.
+
+window.scrollTo(0,100) --> it moves with a gap 0f 100px from 0px 
+
+let x=100;
+btn.addEventListener("click",()=>{
+window.scrollTo(0,100)
+x+=100
+})
+
+window.scrollTo({top:x,behaviour:"smooth"}) --> This is to change the behaviour.
+
+window.scrollTo({top:0,behaviour:"smooth"}) --> from last to top. 
+
+There are two kinds of storages
+
+1.local storage 2.session storage.
+
+these will store in the form of keys and values
+
+alert,prompt,confirm,open,close,location.assign,history.back,history.forward,window.scrollTo();
+
+localstorage.setItem("key","value")
+localStorage.setItem("name","john")
+localStorage.setItem("name1","wjohn")
+localStorage.setItem("name2","john2")
+this will add one after in storage the other 
+
+let p=localStorage.getItem("name1")
+            p1.innerHTML=p --> o/p will be jhon 
+
+localStorage.clear() --> to clear.
+
+similar to the session storage 
+
+
+it will removes the data when we close the window or expies the session.
+where as in the localstorage we need to removes intenstionaly.
+
+
+
+23/09/24 --> Monday 
+
+local storage = {"name":"Rakesh","city":"Hyd"}
+
+ls={"user":{"name":"Rakesh","city":"Hyd"}} --> to store in the single object into a single varible
+
+ls={"userDetails":"[{},{},{}]"} --> multiple objects in single variable with the help of an array 
+
+localStorage.setItem("userDetails",JSON.stringfy(data))
+
+
+destructuring format:- 
+
+unpacking the elements and assigning the values of an array to the variables 
+
+
+let arr=[1,2,3,4,5]
+[a,b]=arr
+[a,,,b]=arr --> 1 5
+console.log(a,b) --> 1 2
+console.log(a,b,c,d,e) --> 1 2 3 4 5
+
+we can do for object also 
+
+let obj={"name":"virat","city":"Banglore","Role":"Cricketer"}
+let {name,city,role}=obj
+console.log(name) --> virat 
+let {city} = obj;
+console.log(city)--> Banglore
+
+let arr=[1,2,[3,4]];
+let [a,b,[c,d]]=arr;
+console.log(c)--> 3; 
+
+let [,,[,a]] --> 4 --> skipping elements
+
+let a=4;
+let b=5;
+[a,b]=[b,a] --> this will swap the values 
+
+let skills="html"
+[skill1,skill2="CSS","skill3="js"]=skills --> assisgning new variables with deafult values 
+console.log(skill1,skill2,skill3) --> html css js --> this will not applies to the skills 
+
+let fruits=["apple","orange","banana","grapes"]
+
+[...reamining] = fruits --> ... --> this is rest operator to store the all values 
+
+let veggies = ["potato", "tomato","chilli","carrot"]
+cosnole.log(remaining) --> apple orange banana grapes
+console.log(...fruits) --> apple orange banana grapes --> assignes to single variable 
+console.log([...fruits]+[...veggies]) --> ["potato", "tomato","chilli","carrot", "apple","orange","banana","grapes"]    
+
+similar to the object also 
+
+spread operator 
+--> unpacking seperate elements into an array --> [1,2,3,4,5] to 1 2 3 4 5 
+
+... --> from packing to unpacking behaving as a spread operator(based on items packing/unpacking). 
+... --> from unpacking to packing behaving as a rest operator 
+
+
+
+let res= 1+2;
+eval(res) --> 3 
+
+30-09-2024 ---> Monday
+
+Gobal execution context 
+
+Gobal execution context --> local execution context (1) --> local execution context (2) these will push to E.C 
+
+calls talks 
+
+heap memory --> (temporary memory)  
+
+syncronous amd asynchronous operations 
+
+
+function demo(){
+    // console.log("Iam demo");
+    setTimeout(()=>{
+        console.log("Iam demo");
+    }, 3000)
+}
+
+
+function demo1(){
+    console.log("Iam demo1");
+}
+
+
+demo()
+demo1()
+
+setInterval(()=>{
+    console.log(x++)
+},1000,x=1)  --> this will execute infinite times with the delay of 1 second 
+
+
+01/10/2024 ---> Tuesday 
+
+synchrounus and asynchronous operations 
+
+synchrounus --> the code runs in a particular sequence of instructions given in the program
+
+Due to sync prog sometimes important instructions get blocked due to zome prev instructions (which cases delay).
+
+Async code execution allows to execute next instructions Immediately and doesn't block the flow.
+
+we can use asynchronous operations to execute in sequential way by using
+
+using callbacks --> it will create callback hell
+promises --> It will create promise chaining 
+Async/Await --> 
+
+here we have used timing function to execute functions to asynchronous way.
+beacuse of this we way not get output in sequential way
+
+so we get it sequential way we have to handle them these handling was done with the using of call backs
+
+
+
+03/10/24 --> Thursday
+
+1st in 1st out --> task Queue or Microtask Queue
+1st in last out --> Call Stack
+
+
+Promises:- 
+It is use to hadle asynchronous operations
+
+It is an object 
+
+asynchronous operations --> db come, API, calls, timings
+
+3 state:- 
+
+1.Pending
+2.Fullfill-(Resolve)
+3.Failure-(reject state)
+
+new Promise() --> to create 
+syntax --> new Promise((resolving,rejecting)=>{}) 
+
+promises are used to handle asynchronous operations after call backs 
+
+we choose promises than callbacks to overcome the callback hell issues
+
+const pr1 = new Promise((resolve,reject)=>{
+    setTimeout(() => {
+        resolve("Promise1 resolved") // resolving promise
+    }, 1500);
+})
+console.log(pr1) // Promise { <pending> }
+pr1.then((e)=>{console.log(e)}) // Promise1 resolved
+
+if promise success then will be executed if not catch 
+
+const pr1 = new Promise((resolve,reject)=>{
+    setTimeout(() => {
+        reject("Promise1 rejected") // resolving promise
+    }, 1500);
+})
+// console.log(pr1)
+pr1.then((e)=>{console.log(e)}).catch((e)=>{console.log(e)}) // Promise1 rejected
+
+
+const pr1 = new Promise((resolve,reject)=>{
+    setTimeout(() => {
+        if(!true){
+        resolve("Promise1 resolved") // resolving promise
+        }
+        else{
+            reject("Promise1 rejected")
+        }
+    }, 1500);
+})
+// console.log(pr1)
+pr1.then((e)=>{console.log(e)}).catch((e)=>{console.log(e)})  // Promise1 rejected
+
+promise chaining / Method chaining:-
+
+To come in the sequential order 
+
+pr1.then((x)=>{console.log(x); return pr2}).then((e)=>{console.log(e);}).catch((a)=>{console.log(a); return pr3}).then((e)=>{console.log(e);})
+
+in promise chaining if one promise failed the process will be stopped at there so, we can use catch only one time
+
+
+.finally() --> will executes if fullfill or not. 
+
+
+04.10.24 --> Friday 
+
+API's
+
+Application Programming Interface
+
+There are 2 types 
+1.Web API --> Through web server to communicate the web page (REST API)
+2.Operating system API --> 
+
+REST --> HTTP request (90% usage) --> fast
+SOAP --> slow(bcoz of more protocols) --> High secure.
+
+REST --> It will takes request to the server and gives the response.
+WEBSockets --> we will get response instantly.(games,live interactions, chat applications)
+
+REST --> servers, 3rd party software or systems --> fetch() method helps to use --> to make http request 
+
+HTTP Status codes:-
+
+2xx --> successfull code
+3xx --> website redirected
+4xx --> client error or temperaly not found
+5xx --> server error
+
+HTTP and HTTPS are 2 types of proctocols 
+
+JSON Prototype --> we can Formate the data into json to see data
+
+
+let url = 'https://fakestoreapi.com/products'
+
+    let data = fetch(url)
+
+    data.then((e)=>e.json()).then((e)=>{
+        let res=e;
+            for(i of res){
+                let div=document.createElement("div")
+                div.innerHTML=i.title
+                document.body.appendChild(div)
+                console.log(i.title)
+            }
+        })
+
+HTTP methods:- 
+
+get,post,put/patch,delete
+
+get --> retreving response from server
+post --> sending data to server or creating data into database through the server
+put/patch --> updating existing data in database through the server
+delete--> deleting data in database through the server. 
+
+
+
+05.10.2024 --> Saturday
+
+Rest/RestFul
+
+DOM also consider as an API --> DOM will communicates with the webpage
+
+Get syntax:- 
+
+let data = fetch(url, {
+        method: "Get",
+        Headers: {
+          "content-type": "application/json",
+        },
+      });
+ 
+JSON server --> 
+
+package.json --> It will contains all the information/configuration about the 
+
+
+
+json server (folder) --> terminal --> npm init --> just enters untill is this ok  
+
+npm init
+npm i json-server@0
+json-server --watch db.json
+json-server --watch db.json -- port 7777
+npx json-server --watch db.json
+
+
+let data=fetch("http://localhost:3000/comments")
+    data.then((e)=>e.json()).then((e)=>{console.log(e)})
+
+
+Posting the data
+
+let btn1 = document.getElementById("btn1");
+      btn1.addEventListener("click", () => {
+        let data = fetch("http://localhost:3000/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            body: "content",
+            postId: 2,
+          }),
+        });
+      });
+
+http://localhost:3000/posts --> http://localhost:3000/posts/2 
+
+in put we are updating the 2nd object just by changing the method put from above program
+
+in put if we give new data it will replace the data 
+
+patch will add the new data 
+
+
+delete --> same as delete but no need the body 
+http://localhost:3000/posts/2 --> deletes the 2nd one 
+
+
+07.10.2024 --> Monday
+
+npx json-server --watch db.json 
+
+async function demo(){ --> async as a keyword
+    return new Promise((res,rej)=>{
+        res("Iam promise one)
+    })
+}
+
+async function handleDemo(){
+    await demo() --> uses only for async function 
+    console.log(d)
+}
+handleDemo()
+
+This await is also done the promise chaining. 
+
+async function apicall(){
+        let data=fetch('http://localhost:3000/posts')
+        if(data){
+            return data;
+        }
+}
+async function hadleapicall(){
+    try{
+        let d=await apicall();
+    let data=await d.json()
+    console.log(d);
+    }
+    catch(e){
+        console.log(e,"error occured")
+    }
+}
+handleapicall()

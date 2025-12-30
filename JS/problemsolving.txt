@@ -1,0 +1,1312 @@
+prime numbers:- 
+
+num =+prompt("Enter the number: ")
+count = 0;
+if(num>1){
+    for(i=2;i<num;i++){
+        // console.log(i)
+        if(num%i==0){
+            console.log("It is not a Prime number")
+            count++
+            break
+        }
+    }
+    if(count==0){
+        console.log("It is a Prime number")
+    }
+}else{
+    console.log("It is a composite number")
+}
+
+
+Sum of prime numbers:- 
+
+number=prompt("Enter the number: ")
+primesum=0
+for(num of number){
+    count = 0;
+if(num>1){
+    for(i=2;i<num;i++){
+        // console.log(i)
+        if(num%i==0){
+            // console.log("It is not a Prime number")
+            count++
+            break
+        }
+    }
+    if(count==0){
+        // console.log("It is a Prime number")
+        primesum+=Number(num)  //primesum=primesum+Number(num)
+        
+    }
+    
+}else{
+    console.log("It is a composite number")
+}
+}
+console.log("The sum of prime numbers is ", primesum)
+
+
+Sum of non-prime numbers:- 
+
+
+number=prompt("Enter the number: ")
+primesum=0
+nonprimesum=0
+for(num of number){
+    count = 0;
+if(num>1){
+    for(i=2;i<num;i++){
+        // console.log(i)
+        if(num%i==0){
+                    nonprimesum+=Number(num)
+            count++
+            break
+        }
+    }
+    if(count==0){
+        primesum+=Number(num)
+        
+    }
+    
+}else{
+    console.log("It is a composite number")
+}
+}
+console.log("The sum of Non-prime numbers is ", nonprimesum)
+
+
+Checking prime or not a prime using functions
+
+function prime(num){
+    count=0;
+    if(num>1){
+        for(i=2;i<num;i++){
+            // console.log(i)
+            if(num%2==0){
+                console.log("It is not a prime")
+                count++
+                break
+            }
+        }
+        if(count==0){
+            console.log("It is a prime")
+        }
+    }else{
+        console.log("It is a composite number")
+    }
+}
+a=+prompt("enter the number: ")
+prime(a)
+
+
+Checking wheter primesum is bigger or non-primesum is bigger:-
+
+
+number=prompt("Enter the num: ")
+primesum=0;
+nonprimesum=0;
+for(num of number){
+    count=0;
+    if(num>1){
+        for(i=2;i<num;i++){
+            if(num%i==0){
+                nonprimesum+=Number(num)
+                count++
+                break
+            }
+        }
+    if(count==0){
+        primesum+=Number(num)
+    }
+}
+}
+// console.log(primesum)
+// console.log(nonprimesum)
+
+if(primesum>nonprimesum){
+    console.log("Primesum is bigger")
+}else{
+    console.log("Non-primesum is bigger")
+}
+
+
+
+For Fibinocci series
+
+
+let number = prompt('Enter the number of terms: ');
+let a = 0, b = 1, c;
+console.log('Fibonacci Series:');
+for (let i = 1; i <= number; i++) {
+    console.log(a);
+    c = a + b;
+    a = b;
+    b = c;
+}
+
+num =+prompt("Enter the number: ")
+a=0,b=1
+while(a<=num){
+    console.log(a);
+    c=a+b
+    a=b
+    b=c
+}
+
+last number to print the fibinocci series
+
+
+num =+prompt("Enter the number: ")
+a=0,b=1
+while(a<=num){
+    c=a+b
+    a=b
+    b=c
+}
+console.log(a);
+
+
+Numbers not in fibinocci series:-
+
+
+num=+prompt("Enter the number: ")
+a=0,b=1,nonFib=0;
+while(nonFib!=num){
+    for(i=a+1;i<b;i++){
+        console.log(i)
+        nonFib++
+        if(nonFib==num)
+        break
+    }
+    c=a+b;
+    a=b;
+    b=c
+}
+
+num = +prompt("Enter the number: ");
+a = 0; b = 1; nonfib = 0; z = 0;
+nonFibNumbers = [];
+
+while (nonfib != num) {
+    let i = a + 1;
+    while (i < b) {
+        nonFibNumbers.push(i);
+        i++;
+        nonfib++;
+        if (nonfib == num) 
+        break;
+    }
+    c = a + b;
+    a = b;
+    b = c;
+}
+
+console.log(nonFibNumbers.join(" "));  --> o/p will be vertical
+
+Using While loop:-
+
+num=+prompt("Enter the number: ")
+a=0;b=1;nonfib=0;
+while(nonfib!=num){
+    let i=a+1;
+    while(i<b){
+        console.log(i)
+        i++;
+        nonfib++
+        if(nonfib==num)
+        break
+    }
+    c=a+b
+    a=b
+    b=c
+}
+
+num=10
+a=0;b=1;nonfib=0; z=0;
+while(nonfib!=num){
+    let i=a+1;
+    while(i<b){
+        z=i
+        i++;
+        nonfib++
+        if(nonfib==num)
+        
+        break
+    }
+    c=a+b
+    a=b
+    b=c
+}
+console.log(z) --> to print a last number
+
+
+num=+prompt("Enter the Number: ")
+a=0;b=1;nonfib=0; res=" "
+while(nonfib!=num){
+    for(i=a+1;i<b;i++){
+        // console.log(i)
+        nonfib++
+        if(nonfib==num){
+            break
+        }
+        if(i<=num){
+            res+=i + " "
+            
+        }
+    }
+    c=a+b
+    a=b
+    b=c
+}
+console.log(res)
+
+
+finding the maximum prime number in number
+
+input=prompt("Enter the number: ")
+first =1
+for(num of input){
+    if(num>1){
+        count=0
+        for(i=2;i<num;i++){
+            if(num%i==0){
+                count++
+                break
+            }
+        }
+        if(count==0){
+            if(first==1){
+                maxprime=num;
+                first++
+            }
+            else{
+                if(maxprime<num){
+                    maxprime=num
+                }
+            }
+        }
+    }
+}
+console.log(maxprime)
+
+
+
+
+
+
+// Double the numbers in an array: [1, 2, 3, 4, 5] → [2, 4, 6, 8, 10]
+// arr=[1,2,3,4,5];
+// x=arr.map((a,b)=>{return a*2})
+// console.log(x)
+
+// Get even numbers from an array: [1, 2, 3, 4, 5] → [2, 4]
+// arr=[1,2,3,4,5];
+// x=arr.filter((a)=>{return a%2==0})
+// console.log(x)
+// arr1= ["hello", "world", "abc"] 
+// y=arr1.filter((a)=>{return a.length>=5})
+// console.log(y)
+
+//  Log each number in an array: [1, 2, 3, 4, 5] → console logs each number
+// arr=[1,2,3,4,5];
+// x=arr.forEach((a,b,c)=>console.log(a,b,c))
+
+// arr1= ["hello", "world"] 
+// console.log(arr1.forEach((x)=>{console.log(x+"!")}))
+
+//  Check if all numbers in an array are positive: [1, 2, 3, 4, 5] → true
+// arr=[1,2,3,4,5];
+// x=arr.every((a)=>{console.log(a>0)})
+
+// arr1=["hello", "world", "abc"]
+// y=arr1.every((a)=>{console.log(a.length>5)})
+
+//  Check if any number in an array is even: [1, 2, 3, 4, 5] → true
+
+// arr=[1,2,3,4,5];
+// x=arr.some((a)=>{return (a>0)})
+// console.log(x)
+
+// arr1=["hello", "world", "max"]
+// y=arr1.some((a)=>{return (a.includes('x'))})
+// console.log(y)
+
+//  Find the first even number in an array: [1, 2, 3, 4, 5] → 2
+arr=[1, 2, 3, 4, 5]
+
+
+
+
+Find the Unique numbers and Duplicate numbers 
+
+arr=[8,2,4,2,1,1,5,1]
+emp =[], unq=0;dup=0
+for(i of arr){
+    if(!emp.includes(i)){
+        emp.push(i)
+    }
+}
+console.log(emp)
+for(i of emp){
+    c=0;
+    for(j of arr){
+        if(i==j){
+            c++
+        }
+        }
+        if(c==1){
+            unq=unq+i+" "
+        }
+        else{
+            dup=dup+i+" "
+        }
+    }
+console.log("Unique numbers are: ",unq)
+console.log("Duplicate numbers are: ",dup)
+
+
+arr=prompt("Enter the number: ").split("").map(Number)
+emp =[], unq=0;dup=0
+for(i of arr){
+    if(!emp.includes(i)){
+        emp.push(i)
+    }
+}
+console.log(emp)
+for(i of emp){
+    c=0;
+    for(j of arr){
+        if(i==j){
+            c++
+        }
+        }
+        if(c==1){
+            unq=unq+i+" "
+        }
+        else{
+            dup=dup+i+" "
+        }
+}
+console.log("Unique numbers are: ",unq)
+console.log("Duplicate numbers are: ",dup)
+
+
+arr=prompt("Enter the number: ").split("").map(Number)
+emp =[], unq=0;dup=0
+for(i of arr){
+    if(!emp.includes(i)){
+        emp.push(i)
+    }
+}
+console.log(emp)
+for(i of emp){
+    c=0;
+    for(j of arr){
+        if(i==j){
+            c++
+        }
+        }
+        if(c==1){
+            unq=unq+i+" "
+            // console.log(i)
+        }
+        else{
+            dup=dup+i+" "
+        }
+}
+
+if(unq.length==2){
+    console.log("The Unique number is: ",unq)
+    
+}else{
+    console.log("The unique numbers are: ",unq)
+}
+if(dup.length==2){
+    console.log("The Duplicate number is: ",dup)
+    
+}else{
+    console.log("The Duplicate numbers are: ",dup)
+} 
+--> Enter the number: 543545
+[ 5, 4, 3 ]
+The Unique number is:  3 
+The Duplicate numbers are:  5 4
+
+
+
+arr=prompt("Enter the number: ").split("").map(Number)
+emp =[], unq=0;dup=0
+for(i of arr){
+    if(!emp.includes(i)){
+        emp.push(i)
+    }
+}
+console.log(emp)
+for(i of emp){
+    c=0;
+    for(j of arr){
+        if(i==j){
+            c++;
+        }
+        }
+        if(c==1){
+            console.log(i + "->" + c)
+            // unq=unq+i+" "
+        }
+        else{
+            // dup=dup+i+" "
+            console.log(i + "->" + c)
+        }
+} --> Enter the number: 84753957398457
+[ 8, 4, 7, 5, 3, 9 ]
+8->2
+4->2
+7->3
+5->3
+3->2
+9->2
+
+
+
+
+arr=[202,89,112,88]
+res=[]
+for (i of arr){
+    istr = String(i)
+    emp=[]
+    for (j of istr){
+        if(!emp.includes(j)){
+            emp.push(j)
+        }
+    }
+    res.push(istr.length == emp.length)
+}
+console.log(res)
+
+arr = [568,89,112,88,571]
+res=[]
+for(i of arr){
+    istr = String(i)
+    c=0
+    for(j=0;j<istr.length-1;j++){
+        if(istr[j+1]>istr[j]){
+            c++
+        }
+    }
+    res.push(istr.length-1 ==c)
+}
+console.log(res)
+
+
+
+arr = [ 538, 111, 200, 652]
+res=[]
+for(i of arr){
+    istr = String(i)
+    c=0
+    for(j=0;j<istr.length-1;j++){
+        if(istr[j+1]<istr[j]){
+            c++
+        }
+    }
+    res.push(istr.length-1 ==c)
+}
+console.log(res)
+
+
+arr=[23, 33, 200, 785]
+unq="";
+dup="";
+for (i of arr){
+    istr = String(i).split("").map(Number)
+    emp=[]
+    for (j of istr){
+        // console.log(j)
+        if(!emp.includes(j)){
+            emp.push(j)
+        }
+    }
+    // console.log(emp)
+    for(x of emp){
+        c=0;
+        for(z of istr){
+            if(x==z){
+                c++;
+            }
+        }
+        if(c==1){
+            unq=unq+x+" "
+        }
+        else{
+            dup=dup+x+""
+        }
+    }
+}
+console.log(dup) 
+
+let input = "112";
+let uniques = [];
+let duplicates = [];
+
+for (let i = 0; i < input.length; i++) {
+    let isDuplicate = false;
+    for (let j = 0; j < uniques.length; j++) {
+        if (uniques[j] === input[i]) {
+            isDuplicate = true;
+            break;
+        }
+    }
+
+    if (isDuplicate) {
+        let x = false;
+        for (let k = 0; k < duplicates.length; k++) {
+            if (duplicates[k] === input[i]) {
+                x = true;
+                break;
+            }
+        }
+        if (!x) {
+            duplicates.push(input[i]);
+        }
+    } else {
+        uniques.push(input[i]);
+    }
+}
+console.log("Uniques:", uniques.join(''));
+console.log("Duplicates:", duplicates.join(''));
+
+
+
+Missing number in a array
+
+num=prompt("Enter the number: ").split("").map(Number)
+res= " "
+num.sort((a,b)=> a-b);
+console.log(num)
+if(i=num[0], i<=num[num.length-1],i++){
+    if(!num.includes(i)){
+        res=res+i+" "
+    }
+}
+console.log(res)
+ 
+Enter the number: 34571
+[ 1, 3, 4, 5, 7 ]
+2
+
+
+sorting of an array without using sorting 
+
+arr = [6,16,-5,10 ,3]
+for(i=0;i<arr.length;i++){
+    for(let j=1;j<arr.length;j++){
+        if(arr[j] < arr[i]){
+            temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp
+        }
+    }
+}
+console.log(arr) --> [ -5, 16, 10, 6, 3 ]
+
+
+1st missing prime number in a group of numbers 
+
+num=prompt("Enter numbers: ").split(" ").map(Number)
+function primecheck(n1){
+    if(n1>1){
+        for(i=2;i<n1;i++){
+            if(n1%i==0){
+                return false
+            }
+        }
+        return true
+    }
+    return false
+}
+prime = 2
+while(true){
+    if(primecheck(prime)){
+        if(!num.includes(prime)){
+            console.log(prime)
+            break
+        }
+    }
+    prime++
+}
+
+Enter numbers: 7 3 13 11 5 21 2 
+17
+
+
+Giving rank according to the sorting 
+
+arr=prompt().split(" ").map(Number)
+temp =[], res="";
+for(i of arr){
+    temp.push(i)
+}
+arr.sort((a,b)=>a-b);
+for(i of temp){
+    for(j=0;j<arr.length;j++){
+        if(i==arr[j]){
+            res=res+(j+1)+" "
+        }
+    }
+}
+console.log(res)
+
+
+num=prompt().split(" ").map(Number);
+res=""
+for(i of num){
+    lesser=0;
+    for(j of num){
+        if(j<i){
+            lesser++
+        }
+    }
+    res=res+(lesser+1)+" "
+}
+console.log(res)
+
+// arr=["banana", "orange", "amma", "naan"]
+// let result=[]
+// for (let i = 0; i < arr.length; i++) {
+//     let words=arr[i]
+//     // console.log(words)
+//     let reverse=words.split('').reverse().join('');
+//     if(words===reverse){
+//         // console.log("palindrome")
+//         result.push("palindrome")
+//     }
+//     else{
+//         // console.log("not palindrome")
+//         result.push("not palindrome")
+//     }
+// }
+// console.log(result)
+
+words=prompt("")
+let reverse=words.split("").reverse().join("");
+if(words===reverse){
+    console.log("palindrome")
+}
+else{
+    console.log("not palindrome")
+}
+
+
+// str1=prompt();
+// vowels="aeiouAEIOU"
+// res=""
+// for(i of str1){
+//     if(!vowels.includes(i)){
+//         res=res+i
+        
+//     }
+// }
+// console.log(res)
+
+
+rows=prompt("Enter Rows: ");
+
+for(i=1;i<=rows;i++){
+    res=""
+    // res=res+" "
+    for(j=1;j<=i;j++){
+        res=res+"* "
+    }
+    
+    console.log(res)
+} 
+
+Enter Rows: 5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+rows=prompt("Enter Rows: ");
+for(i=1;i<=rows;i++){
+    res=""
+    console.log("* ".repeat(i))
+}
+
+Enter Rows: 5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+rows=prompt("Enter Rows: ");
+num=1;
+for(i=1;i<=rows;i++){
+    res=""
+    es=res+" "
+    
+    for(j=1;j<=i;j++){
+        res=res+num+" "
+        num++
+    }
+    
+    console.log(res)
+}
+Enter Rows: 5
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15
+
+rows=5
+for(i=rows;i>=1;i--){
+    res=""
+    for(k=1;k<=rows-i;k++){
+        res=res+" "
+    }
+    for(j=1;j<=i;j++){
+        res=res+"* "
+    }
+    
+    console.log(res)
+}
+
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+
+
+rows=5
+for(i=1;i<=rows;i++){
+    res=""
+    for(k=1;k<=rows-i;k++){
+        res=res+" "
+    }
+    for(j=1;j<=i;j++){
+        res=res+"* "
+    }
+    
+    console.log(res)
+}
+for(i=rows-1;i>=1;i--){
+    res=""
+    for(k=1;k<=rows-i;k++){
+        res=res+" "
+    }
+    for(j=1;j<=i;j++){
+        res=res+"* "
+    }
+    
+    console.log(res)
+}
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+
+
+// row=prompt()
+// for(i=1;i<=row;i++){
+//     res=""
+//     for(k=1;k<=i-1;k++){
+//         res=res+" "
+//     }
+//     for(j=row;j>=i;j--){
+//         if(i==1||j==row||i==j)
+//         res=res+"* "
+//         else
+//         res=res+"  "
+//     }
+//     console.log(res)
+// }
+
+
+
+
+ 
+// rows=+prompt()
+// for(i=1;i<=rows;i++){
+//     res=""
+//     for(k=1;k<=i-1;k++){
+//         res+=" "
+//     }
+//     for(j=1;j<=rows-i+1;j++){
+//         if(i==1||j==1||i+j==rows+1){
+//             res=res+"* "
+//         }
+//         else{
+//             res=res+"  "
+//         }
+//     }
+//     console.log(res)
+// }
+
+* * * * *  
+ *     * 
+  *   * 
+   * * 
+    * 
+
+
+
+// r=4;
+// n=1;
+// for(i=1;i<=r;i++){
+//     res=""
+//     for(j=1;j<=i;j++){
+//         if(i==2 || i==r){
+//         res=n+res+" "
+//          n++
+//         }
+       
+//         else{
+//             res=res+n+" "
+//             n++
+//         }
+//     }
+//     console.log(res)
+// }
+
+
+
+row=4
+num=1
+for(i=1;i<=row;i++){
+    res=""
+    for(j=1;j<=i;j++){
+        if(i/2==1 ||i==row){
+        res=num+" "+res
+        num++
+        }
+        else{
+            res=res+num+" "
+        num++ 
+        }
+    }
+    console.log(res)
+}
+O/P--->
+1 
+3 2 
+4 5 6 
+10 9 8 7
+
+
+rows="RakeshReddy"
+index=0;
+num=0;
+for(i=1;i<=(rows.length/2);i++){
+    res=""
+    for(j=1;j<=i;j++){
+        if(rows[num]==undefined){
+            res=res+"* ";
+        }else{
+        res=res+rows[num]+" ";
+        num++;
+        }
+    }
+    
+    console.log(res)
+}
+
+R 
+a k 
+e s h 
+R e d d 
+y * * * * 
+   
+
+str="Bhargav";
+rows=1,ind=0;
+while(str[ind]!=undefined){
+    res="";
+    for(i=1;i<=rows;i++){
+        if(str[ind]==undefined){
+            res=res+"* "
+        }
+        else{
+            res=res+str[ind]+" "
+            ind++
+        }
+    }
+    console.log(res)
+    rows++;
+}
+\\ 
+B 
+h a 
+r g a 
+v * * * 
+
+let rows=+prompt("Enter rows: ");
+for(i=1;i<=rows;i++){
+    res="";
+    for(j=1;j<=rows;j++){
+        if(i==rows || j==1 || i==j){
+            res=res+j+" ";
+        }
+        
+        else{
+            res=res+"  ";
+        }
+    }
+    console.log(res);
+}
+
+1         
+1 2       
+1   3     
+1     4   
+1 2 3 4 5 
+
+for(i=1;i<=rows;i++){
+    res=""
+    for(j=1;j<=rows;j++){
+        if(i==1){
+            res=res+j+" "
+        }
+        else if(j==1){
+            res=res+i+" "
+        }
+        else if(i+j==rows+1){
+            res=res+rows+" "
+        }
+        else{
+            res=res+"  "
+        }
+    }
+    console.log(res)
+}
+
+1 2 3 4 5 
+2     5   
+3   5     
+4 5       
+5         
+
+
+rows=5;
+for(i=1;i<=2*rows-1;i++){
+    cols=(i<=rows)?i:2*rows-i;
+    spaces=(i<=rows)?rows-i:i-rows
+    res=""
+    for(k=1;k<=spaces;k++){
+        res=res+" "
+    }
+    for(j=1;j<=cols;j++){
+        res=res+"* "
+    }
+    console.log(res)
+}
+
+// rows=5;
+// for(i=1;i<=rows;i++){
+//     res=""
+//     for(k=1;k<=i-1;k++){
+//         res=res+" "
+//     }
+//     for(j=1;j<=rows-i+1;j++){
+//         res=res+"* "
+//     }
+//     console.log(res)
+// }
+
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+
+    rows=5;
+for(i=1;i<=2*rows-1;i++){
+    cols=(i<=rows)?rows-i+1:i-rows+1;
+    spaces=(i<=rows)?i-1:2*rows-i-1
+    res=""
+    for(k=1;k<=spaces;k++){
+        res=res+" "
+    }
+    for(j=1;j<=cols;j++){
+        res=res+"* "
+    }
+    console.log(res)
+}
+
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+
+rows=5;
+for(i=1;i<=2*rows-1;i++){
+    cols=(i<=rows)?i:2*rows-i;
+    spaces=(i<=rows)?rows-i:i-rows
+    res=""
+    for(k=1;k<=spaces;k++){
+        res=res+" "
+    }
+    for(j=1;j<=cols;j++){
+        res=res+"* "
+    }
+    console.log(res)
+}
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+
+
+
+WAP to print  the sum of outer layers in the matrix
+
+rows=+prompt("Enter rows: ")
+cols=+prompt("Enter cols: ")
+m1=[],sum=0;
+for(i=1;i<=rows;i++){
+    x=[];
+    for(j=1;j<=cols;j++){
+        console.log("Enter "+i+""+j+" elements")
+        ele=+prompt()
+        x.push(ele)
+    }
+    m1.push(x)
+}
+for(i=0;i<m1.length;i++){
+    res=""
+    for(j=0;j<m1[i].length;j++){
+        if(i==0||i==rows-1||j==0||j==cols-i){ // if(i==j||i+j=rows-1)
+            res=res+m1[i][j];
+            sum=sum+m1[i][j]
+        }
+        else {
+            res=res+"  "
+        }
+    }
+}
+console.log(sum)
+
+
+WAP to print the sum of diagonal elements in the matrix
+
+rows=+prompt("Enter rows: ")
+cols=+prompt("Enter cols: ")
+m1=[],sum=0;
+for(i=1;i<=rows;i++){
+    x=[];
+    for(j=1;j<=cols;j++){
+        console.log("Enter "+i+""+j+" elements")
+        ele=+prompt()
+        x.push(ele)
+    }
+    m1.push(x)
+}
+for(i=0;i<m1.length;i++){
+    res=""
+    for(j=0;j<m1[i].length;j++){
+        if(i==j||i+j==rows-1){ 
+            res=res+m1[i][j];
+            sum=sum+m1[i][j]
+        }
+        else {
+            res=res+"  "
+        }
+    }
+}
+console.log(sum)
+
+
+rows=5;
+alpha=65; 
+for(i=1;i<=rows;i++){
+    res="";
+    for(k=1;k<=rows-i;k++){
+        res=res+"  "
+    }
+    temp=alpha+i-1;
+    for(j=1;j<=i;j++){
+        res=res+String.fromCharCode(temp)+" "
+        temp--
+    }
+    alpha=alpha+i
+    
+    console.log(res)
+}
+
+        A 
+      C B 
+    F E D 
+  J I H G 
+O N M L K
+
+let rows=+prompt("Enter NoOf rows:");
+let gap=1;
+for(i=rows;i>=1;i--){
+    res="";
+    ascii=65;
+    for(j=1;j<=i;j++){
+        res=res+String.fromCharCode(ascii);
+        ascii++;
+    }
+    if(i<rows){
+        res=res+" ".repeat(gap);
+        gap=gap+2;
+    }
+    if(i==rows){
+        let temp=res;
+        res=res.split("");
+        res.pop();
+        let rev=res.reverse().join("");
+        console.log(temp+rev);
+        
+    }
+    else{
+    let rev=res.trim().split("").reverse().join("");
+    res=res+rev;
+    console.log(res);
+    }
+}
+
+Enter NoOf rows:7
+ABCDEFGFEDCBA
+ABCDEF FEDCBA
+ABCDE   EDCBA
+ABCD     DCBA
+ABC       CBA
+AB         BA
+A           A
+
+
+rows=+prompt("Enter the Rows: ")
+for(i=1;i<=rows*2-1;i++){
+    res="";
+    spa="";
+    cols = (i<=rows)?i:2*rows-i
+    space=(i<=rows)?(2*rows)-(i*2)-1:(2*i)-(2*rows)-1
+    space=(space<0)?0:space 
+    
+    for(j=1;j<=cols;j++){
+        res+="*"
+    }
+    if(i==rows){
+        console.log(res+res.slice(0,res.length-1))
+    }else{
+    console.log(res+" ".repeat(space)+res)
+}
+}
+
+Enter the Rows: 5
+*       *
+**     **
+***   ***
+**** ****
+*********
+**** ****
+***   ***
+**     **
+*       *
+
+
+rows=4;
+for(i=1;i<=rows;i++){
+    num =1 
+    res=""
+    for(j=1;j<=i;j++){
+        res=num+" "+res
+        num++
+    }
+    console.log(res)
+}
+
+1 
+2 1 
+3 2 1 
+4 3 2 1
+
+rows=7
+for(i=1;i<=2*rows-1;i++){
+    res="";space="";pos=1;res1=""
+    cols=(i<=rows)?i:2*rows-i
+    spac=(i<=rows)?2*rows-(i*2)-1:(2*i)-2*rows-1
+    for(k=1;k<=spac;k++){
+        space+="  "
+    }
+    for(j=1;j<=cols;j++){
+        if(j%2==0)
+        res+="0 "
+        else
+        res+="1 "
+    }
+    if(i==rows){
+        // res=res.slice(0,-2)
+        console.log(res+res.slice(0,-2))
+    }else{
+    console.log(res+space+res)
+
+    }
+}
+
+1                       1 
+1 0                   1 0 
+1 0 1               1 0 1 
+1 0 1 0           1 0 1 0 
+1 0 1 0 1       1 0 1 0 1 
+1 0 1 0 1 0   1 0 1 0 1 0 
+1 0 1 0 1 0 1 1 0 1 0 1 0 
+1 0 1 0 1 0   1 0 1 0 1 0 
+1 0 1 0 1       1 0 1 0 1 
+1 0 1 0           1 0 1 0 
+1 0 1               1 0 1 
+1 0                   1 0 
+1                       1 
+
+
+Objects
+
+
+arr=[
+{ name: "John", notes: [3, 5, 4]},
+{ name: "Arun", notes: [4,6,3,2]}
+]
+
+function avg(a){
+    sum=0;
+    for(j of a){
+        sum=sum+j
+    }
+    return sum/a.length
+}
+for(i of arr){
+    x=avg(i.notes)
+    delete i.notes;
+    i["avg.notes"]=x
+}
+console.log(arr)
+
+
+[
+  { name: 'John', 'avg.notes': 4 },
+  { name: 'Arun', 'avg.notes': 3.75 }
+]

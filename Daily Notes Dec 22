@@ -313,3 +313,459 @@ Day 6 Dec 29 2025 --> JavaScript
 
 JavaScript
 
+
+Javascript is a object based programming language 
+
+there are three types
+    --> Builtin objects 
+    --> Environment based objects
+    --> User defined objects
+
+
+typeof(variable) --> Used to check the datatype of value present in the variable.
+
+
+Hoisting 
+
+    Let will not allow to re-hositing
+    Var will allows to hoisting
+
+
+Scope
+    Global Scope
+    Block Scope
+    Function Scope
+
+
+Number --> It is a consutuctor used to convert datatype to number.
+let x = "123"
+consolge.log(typeof(x)) --> String
+let x1 = Number(x)
+consolge.log(typeof(x1)) --> number
+
+datatype
+    NaN --> Not a Number
+
+
+
+
+
+
+
+
+> const a = 10;
+undefined
+> const a = 10;
+Uncaught SyntaxError: Identifier 'a' has already been declared
+> typeof(a)
+'number'
+> x=[1,2,3]
+[ 1, 2, 3 ]
+> x=[1,2,3]
+[ 1, 2, 3 ]
+> x=[1,2,3];
+[ 1, 2, 3 ]
+> x=[1,2,3];
+[ 1, 2, 3 ]
+> x=[1,2,3]
+[ 1, 2, 3 ]
+> const x=[1,2,3]
+undefined
+> stu = {name:'manish', mark:72}
+{ name: 'manish', mark: 72 }
+> stu.mark=100;
+100
+> stu.age=12;
+12
+> stu
+{ name: 'manish', mark: 100, age: 12 }
+----------------------------------------
+
+> var a = null;
+undefined
+> var b = undefined;
+undefined
+> a == b;
+true
+> a === b;
+false
+> a !== null
+false
+> b !== null
+true
+> var onj1 = {};
+undefined
+> var obj1 = {};
+undefined
+> typeof(obj1)
+'object'
+> obj1.x=10;
+10
+> obj1.y=20;
+20
+> obj1
+{ x: 10, y: 20 }
+> Object.keys
+[Function: keys]
+> Object.keys(obj1);
+[ 'x', 'y' ]
+> Object.values(obj1);
+[ 10, 20 ]
+
+> obj1.z=78;
+78
+> obj1
+{ x: 10, y: 20, z: 78 }
+> let str = {name: 'manish', age : 12}
+undefined
+> str
+{ name: 'manish', age: 12 }
+> str.name
+'manish'
+> str['marks']=67
+67
+> str
+{ name: 'manish', age: 12, marks: 67 }
+> str.['city']='Hyderabad'
+str.['city']='Hyderabad'
+    ^
+
+Uncaught SyntaxError: Unexpected token '['
+> str.city='Hyderabad'
+'Hyderabad'
+> str
+{ name: 'manish', age: 12, marks: 67, city: 'Hyderabad' }
+>
+-----------------------------------------
+
+> var robot1={
+| name:'chitti'
+| model:'GH67'
+model:'GH67'
+^^^^^
+
+Uncaught SyntaxError: Unexpected identifier 'model'
+> var robot1={
+| name:'chitti'
+| model:'GH67'}
+model:'GH67'}
+^^^^^
+
+Uncaught SyntaxError: Unexpected identifier 'model'
+> var robot1={
+| name:'chitti',
+| model:'GH67'}
+undefined
+> robot1
+{ name: 'chitti', model: 'GH67' }
+> var rb1 = Object.freeze(robot1);
+undefined
+> rb1
+{ name: 'chitti', model: 'GH67' }
+> robot1
+{ name: 'chitti', model: 'GH67' }
+> rb1.weight=567;
+567
+> rb1
+{ name: 'chitti', model: 'GH67' }
+> robot1.weight=567;
+567
+> var obj1 = {x:10, y:20}
+undefined
+> var obj2 = {x:10, y:25, z:30}
+undefined
+> var res = Object.assign(obj1, obj2);
+undefined
+> obj1;
+{ x: 10, y: 25, z: 30 }
+> obj2;
+{ x: 10, y: 25, z: 30 }
+> res
+{ x: 10, y: 25, z: 30 }
+> obj1
+{ x: 10, y: 25, z: 30 }
+> obj4={k:89};
+{ k: 89 }
+> var res = Object.assign(obj1.obj4);
+Uncaught TypeError: Cannot convert undefined or null to object
+    at Object.assign (<anonymous>)
+> var res = Object.assign(obj1,obj4);
+undefined
+> obj1
+{ x: 10, y: 25, z: 30, k: 89 }
+
+-------------------------------------------------
+
+
+> var arr1=[]
+undefined
+> typeof(arr1)
+'object'
+> arr1[0] = 43;
+43
+> arr1[1] = 46;
+46
+> arr1[2] = 49;
+49
+> arr1
+[ 43, 46, 49 ]
+> arr1.length
+3
+> arr1[4] = [1,2,3];
+[ 1, 2, 3 ]
+> arr1
+[ 43, 46, 49, <1 empty item>, [ 1, 2, 3 ] ]
+> arr1[3] = 'Hai'
+'Hai'
+> arr1
+[ 43, 46, 49, 'Hai', [ 1, 2, 3 ] ]
+> arr1[5] = {name:'Alice', age:12}
+{ name: 'Alice', age: 12 }
+> arr1
+[ 43, 46, 49, 'Hai', [ 1, 2, 3 ], { name: 'Alice', age: 12 } ]
+> arr1[5]
+{ name: 'Alice', age: 12 }
+> let arr2 = [1,2,3]
+undefined
+> arr2
+[ 1, 2, 3 ]
+> arr2[1] = 22
+22
+> arr2
+[ 1, 22, 3 ]
+> arr2.length
+3
+> arr2[100] = 89
+89
+> arr2.length
+101
+>
+
+> var arr=new Array(3);
+undefined
+> arr
+[ <3 empty items> ]
+> arr[0] = 2
+2
+> arr[0] = 1
+1
+> arr[4] = 5
+5
+> var arr = new Array(10)
+undefined
+> arr.length
+10
+> var arr1 = new Array(1,2,3,4,5)
+undefined
+> arr1
+[ 1, 2, 3, 4, 5 ]
+>
+-------------------------------------------------------------------------
+
+
+
+
+
+var fruits = ['Mango', 'Apple', 'Banana', 'Grapes', 'Peach', 'strawberry', 'gooseberry', 'JackFruit']
+
+for(let i in fruits){
+    console.log(`${i} --> ${fruits[i]}`)
+}
+
+fruits.forEach(function(x,i,ar){
+    console.log(`)
+})
+
+
+foreach():- 
+it is used to iterate over an array and perform a specific task for every element in the array.
+arr=[1,2,3,4,5,6,7,8,9]
+console.log(arr.forEach((x,i)=>{
+    console.log(x,i)
+}))
+
+push --> arr.push(1,2,34) --> Used to insert the data into at array
+
+push():-
+add element at the end of the array
+let arr=[1,2,3];
+arr.push(4);
+console.log(arr); // [1, 2, 3, 4]
+
+push method will add elements into an ending.
+it will returns length of the array.
+
+let arr=[]
+let x=arr.push("jdsb",9,23);
+console.log(x); //3 --> length of the updated array.
+
+
+pop():-
+remove the last element of the array
+let arr=[1,2,3,4,5];
+arr.pop();
+console.log(arr); // [1, 2, 3, 4] 
+
+pop will removes the element from array at last index and returns popped out element.
+it will return undefined if array is empty.
+
+
+shift()
+remove the first element of the array. 
+let arr=[1,2,3,4,5];
+arr.shift();
+console.log(arr); // [2, 3, 4, 5]
+
+
+splice():-
+it is used to add or remove items from an array
+
+arr=[1,2,3,4,5,6,7,8,9]
+arr.splice(2,1) --> this (2,1) starts from 2nd index and removes the 1 element 
+console.log(arr) 
+// [
+  1, 2, 4, 5,
+  6, 7, 8, 9
+]
+
+arr=[1,2,3,4,5,6,7,8,9]
+arr.splice(2,1 ,10,11,12) --> this (2,1) starts from 2nd index and removes the 1 element add elements
+console.log(arr) 
+// [
+  1, 2, 10, 11, 12,
+  4, 5,  6,  7,  8,
+  9
+]
+
+
+join():-
+we can join any thing and makes new string
+join() is a string method that returns a string concatenated with all elements of an array.
+arr=["hello","World","this","is","a","test"]
+let x=arr.join(" - ")
+console.log(x) // hello - World - this - is - a - test 
+
+
+find():- 
+
+let arr=[5,3,2,9,1.2,1.3,1.4]
+arr.find((a,b,c)=>{console.log(a<2)}) //1.2 --> in this it will pass the 1st element
+
+let arr=[5,3,2,9,1.2,1.3,1.4]
+let x=arr.findIndex((a,b,c)=>a<2) //4
+console.log(x);
+
+
+map():- 
+arr=[1,2,3,4,5,6,7,8,9]
+arr.map(function(){
+    console.log("hello")
+})
+//hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+hello
+
+arr.map(()=>{console.log("i")})
+
+
+let arr=[1,2,3]
+arr.map((a,b,c)=>{console.log(a,b,c)})
+
+//1 0 [ 1, 2, 3 ] a will store value b will store index c will store array
+2 1 [ 1, 2, 3 ]
+3 2 [ 1, 2, 3 ]
+
+
+map method will returns the new array with same length of input array 
+
+let arr=[1,2,3]
+op=arr.map(()=>"i")  
+console.log(op) //[ 'i', 'i', 'i' ]     
+
+demo=()=>{}; --> return statement required
+demo=()=>  --> return statement not required
+
+
+every():- 
+
+will using this if all the conditions pass then only it will return true.
+
+let arr=[5,3,2,9]
+arr.every((a,b,c)=>{console.log(a==2)}) //false a>=2 --> true
+
+
+
+spread operator 
+--> unpacking seperate elements into an array --> [1,2,3,4,5] to 1 2 3 4 5 
+
+... --> from packing to unpacking behaving as a spread operator(based on items packing/unpacking). 
+... --> from unpacking to packing behaving as a rest operator 
+
+
+
+let fruits=["apple","orange","banana","grapes"]
+
+[...reamining] = fruits --> ... --> this is rest operator to store the all values 
+
+let veggies = ["potato", "tomato","chilli","carrot"]
+cosnole.log(remaining) --> apple orange banana grapes
+console.log(...fruits) --> apple orange banana grapes --> assignes to single variable 
+console.log([...fruits]+[...veggies]) --> ["potato", "tomato","chilli","carrot", "apple","orange","banana","grapes"]    
+
+similar to the object also 
+
+
+object destructuring
+
+var student = {name: 'Alice', age : 22, marks : 100}
+var {name, age, marks} = student
+
+console.log(name) --> Alice
+console.log(age) --> 22
+
+
+
+array sort(): --> This method will modifies the original array
+
+let arr=[6,2,5,4,3,0]
+arr.sort()
+console.log(arr) // [0,2,3,4,5,6]
+
+
+let arr=[30,22,145,114,848, 520]
+arr.sort((a,b)=>a-b); --> without using this we get [114,145,30,..] because this will takes as string and compares the 1st value 
+console.log(arr) // [0,2,3,4,5,6]
+
+arr.sort((a,b)=>b-a); --> for decresing order
+
+reverse(): --> It will modifies the original array
+
+let arr=[6,2,5,4,3,0]
+arr.reverse();
+console.log(arr) // [0,3,4,5,2,6]
+
+
+let arr=[6,5,4,7,2,9]
+arr.sort().reverse()
+console.log(arr) //[9,7,6,5,4,2]
+
+
+slice():-
+.slice() --> It will return a new string, does not change the original string.
+.slice(start) --> It will return a new string from the start index to the end of the string
+.slice(start,end) --> It will return a new string from the start index to the end index of the string.
+
+let str1="Hello world";
+let str2=str1.slice(3,8);
+console.log(str2); // lo wo (the ending letter will not be included)
+
+.slice(start,end) --> In this while using indexes the starting index should be less than ending index.
+
+
+slice can print the negetive values. 
