@@ -838,3 +838,17 @@ DOM --> Document Object Model
 
 
 Day 8 Dec 22 2025 --> Main(), synchrounus, Asynchronous 
+
+
+In Javascript is a single threaded language. and also synchronous language. and can perform the multiple tasks at a time. but it will not perform the tasks in parallel.
+
+In Javascript we can achive the asynchronous behavior by using the callbacks, promises, async/await.
+
+
+Event loops --> It is a loop that is used to handle the asynchronous events in the program.
+
+
+Callbacks --> It is a function that is passed as an argument to another function.
+
+To excute callbacks we need to use the setTimeout() and setInterval().
+
