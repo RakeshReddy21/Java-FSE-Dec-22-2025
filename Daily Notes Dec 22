@@ -834,3 +834,7 @@ IIFE --> Immediately Invoked Function Expression --> It is a function that is ex
 prototype --> It is a property of the function that allows us to add new properties and methods to the function.
 
 DOM --> Document Object Model
+
+
+
+Day 8 Dec 22 2025 --> Main(), synchrounus, Asynchronous 
