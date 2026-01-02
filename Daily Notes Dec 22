@@ -852,3 +852,28 @@ Callbacks --> It is a function that is passed as an argument to another function
 
 To excute callbacks we need to use the setTimeout() and setInterval().
 
+SetTimeout() --> It is a function that is used to execute a function after a certain delay.
+SetInterval() --> It is a function that is used to execute a function after a certain interval.
+
+
+Promises --> It is a function that is used to handle the asynchronous operations.
+
+1.Pending
+2.Fullfill-(Resolve)
+3.Failure-(reject state)
+
+
+let promise = new Promise(function (resolve,reject){
+    // Need to write the time consuming code or external calls
+    let x = 10;
+    if(x > 20){
+        resilve("Promise is resolved")
+    } else {
+        reject("Promise is rejected")
+    }
+})
+
+promise.then(function (e){console.log(e)}).catch(function (e){console.log(e)})
+
+Fetch API --> It is a function that is used to fetch the data from the server.
+
