@@ -877,3 +877,8 @@ promise.then(function (e){console.log(e)}).catch(function (e){console.log(e)})
 
 Fetch API --> It is a function that is used to fetch the data from the server.
 
+
+
+Day 9 Jan 2 2026 --> Bootstrap
+
+Bootstrap --> It is a framework that is used to create the responsive and mobile-friendly websites.
