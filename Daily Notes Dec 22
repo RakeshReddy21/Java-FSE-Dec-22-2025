@@ -912,3 +912,35 @@ Feedback of product --> Feedback id(primary key) integer, order id(foreign key) 
 
 
 Search box (country name) -- responsive design 
+
+
+Day 12 Jan 6 2026 --> SQL
+
+
+select customer_id, count(customer_id) from orders where order_date > '2017-01-01' group by customer_id order by count(customer_id) desc limit 5 offset 1;
+
+select country, customer_id, count(country) from customers group by country having count(country) > 5 order by count(country) desc limit 3 offset 1;
+
+SELECT category_id, COUNT(product_name) AS total_products, AVG(unit_price) AS avg_unit_price FROM products WHERE unit_price > 20 GROUP BY category_id HAVING COUNT(product_name) > 5 ORDER BY avg_unit_price DESC;
+
+SELECT product_id, COUNT(*) AS total_orders, SUM(quantity) AS total_quantity_sold, AVG(discount) AS avg_discount FROM order_details GROUP BY product_id HAVING COUNT(*) > 50 AND AVG(discount) > 0.05 ORDER BY total_quantity_sold DESC;
+
+select supplier_id, discontinued from products;
+
+
+
+Task2:
+
+select patients_id, first_name, last_name, diagnosis, pn.province_id, province_name from province_names pn inner join (select pt.patient_id as patients_id, first_name, last_name, diagnosis, province_id from patients pt left join admissions ad on pt.patient_id = ad.patient_id where diagnosis = 'Cardiac Arrest') as sub_query on sub_query.province_id = pn.province_id;
+
+select doctor_id, first_name, last_name, count(attending_doctor_id) as count from admissions ad left join doctors dt on ad.attending_doctor_id = dt.doctor_id group by doctor_id, first_name, last_name order by count(attending_doctor_id) desc limit 1;
+
+select pt.patient_id, pt.first_name, pt.last_name, count(pt.patient_id) from patients pt inner join (select patient_id, doctor_id, diagnosis, specialty, count(patient_id) from admissions ad inner join doctors do on do.doctor_id = ad.attending_doctor_id where specialty = 'Pediatrician' group by patient_id, doctor_id, diagnosis, specialty) as sub_query on pt.patient_id = sub_query.patient_id group by pt.patient_id, pt.first_name, pt.last_name having count(pt.patient_id) > 1;
+
+select ad.patient_id, diagnosis, attending_doctor_id, first_name as doctor_firstname, last_name as doctor_lastname from admissions ad inner join doctors dc on dc.doctor_id = ad.attending_doctor_id where diagnosis = 'Cancer';
+
+select pt.patient_id, first_name, last_name from patients pt inner join (select ad.patient_id as adpt_id, diagnosis, attending_doctor_id, first_name as doctor_firstname, last_name as doctor_lastname from admissions ad inner join doctors dc on dc.doctor_id = ad.attending_doctor_id where diagnosis = 'Cancer') as sub_query on pt.patient_id = sub_query.adpt_id where gender = 'F';
+
+
+select product_name from products pd inner join (select od.order_id, product_id, country from order_details od inner join (select order_id, country from customers inner join orders on customers.customer_id = orders.customer_id where country = 'Germany') as sub on sub.order_id = od.order_id) as jd on pd.product_id = jd.product_id;
+
