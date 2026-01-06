@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #universities{
+            display: grid;
+            grid-template-columns:20% 20% 20% 20%;
+            justify-content: center;
+            gap: 10px;
+
+        }
+        .cards{
+            border:2px solid black;
+            padding: 10px;
+        }
+        .search{
+            position: relative;
+            left: 45%;
+            margin-bottom: 10px;
+        }
+        @media screen and (min-width: 320px) and (max-width: 480px) {
+            #universities{
+                grid-template-columns:100%;
+            }
+            .cards{
+                width: 200px;
+            }
+            .search{
+                left: 35%;
+            }
+        }
+        @media screen and (min-width: 480px) and (max-width: 768px) {
+            #universities{
+                grid-template-columns:1fr 1fr;
+            }
+            .cards{
+                width: 250px;
+            }
+            .search{
+                left: 40%;
+            }
+        }
+        @media screen and (min-width: 768px) {
+            #universities{
+                grid-template-columns:1fr 1fr 1fr;
+            }
+            .cards{
+                width: 200px;
+            }
+            .search{
+                left: 45%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <input type="search" id="search" class="search" placeholder="Search by country" >
+    <div id="universities"></div>
+    
+
+    <script>
+        let url_api = 'http://universities.hipolabs.com/search?country=india'
+        let data = fetch(url_api, {
+        method: "Get",
+        Headers: {
+          "content-type": "application/json",
+        },
+      });
+      data.then((e)=>e.json()).then((e)=>{
+        const container = document.getElementById("universities");
+
+            e.forEach(i => {
+                const card = document.createElement("div");
+                card.className = "cards";
+
+                card.innerHTML = `${i.name} <br>
+                ${i.country}<br>
+                <a href="${i.web_pages}" target="_blank">${i.web_pages}</a><br>
+                ${i.domains}<br>
+                ${i["state-province"]}`;
+                
+                container.appendChild(card);
+            });
+        })
+        let search = document.getElementById("search");
+        search.addEventListener("input", () => {
+            let searchValue = search.value.toLowerCase();
+            let cards = document.getElementsByClassName("cards");
+            for(let i = 0; i < cards.length; i++){
+                let text = cards[i].innerText.toLowerCase();
+                console.log(text);
+                if(text.includes(searchValue)){
+                    cards[i].style.display = "block";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        })
+    </script>
+</body>
+</html>

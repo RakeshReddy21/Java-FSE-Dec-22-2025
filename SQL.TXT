@@ -1,0 +1,455 @@
+16-10-2024 --> wendesday
+
+SQL
+
+Tables:- Entities/Relations
+Rows:- Records/Tuples/Entries 
+Columns:- Fields and Attrubutes.
+
+Datatypes 
+1. Number --> 
+    1.1 INT, 
+    1.2 decimal(syntax:- decimal(precision, scalar)), 
+    1.3 float(syntax:- float(precision)).
+2. String  --> 
+    2.1 Varchar, 
+    2.2 Char, --> This will be based on the memory
+    2.3 Text --> blogging, posts, summeries, description
+3. Date and time --> 
+    3.1 Date (YYYY-MM-DD), 
+    3.2 Time (HH-MM-SS), 
+    3.3 Timestamp (YYYY-MM-DD HH-MM-SS) 
+4. Boolean
+    4.1 True 
+    4.2 False
+5. Blob
+
+
+DDL --> Data Defination Language --> 
+    Create:- Create new db, table, indexes and views 
+    Alter:- Modify an existing table structure(add/drop Columns)
+    Drop:- Delete new db, tables, indexes and views
+    Truncate:- Delete all the data in the tables but keeps the table structure as it is only
+
+DML --> Data Manipulation Language
+    Insert:- ADD new rows of data to the table.
+    Update:- Modify existing rows of data in the table.
+    Delete:- Delete existing rows of data in the table.
+
+DCL --> Data Control Language --> This can be used by admins
+    Grant:- Providing specific users with certain privilages(read, Write)
+    Revoke:- Removing privilages from users.
+
+TCL --> Transaction Control Language
+    Commit:- Saving the changes made to the database.
+    Rollback:- Undoing the changes made to the database.
+    Savepoint:- Saving the changes made to the database at a specific point.
+    Set Transaction:- Specify the characteristics for a Transaction
+
+DQL --> Data Query Language 
+    --> It is used to fetch the data from the tables.
+    Select. 
+
+1. For creating the table
+    Syntax:- create Table 
+    Example:- create table 
+
+
+
+17-10-2024 --> Thursday
+
+
+Alter --> (Rename the columns , add the columns, drop the columns)
+
+For Adding one column
+
+Alter Table Table_name 
+ADD column columnname datatype
+
+for many 
+
+Alter Table Table_name 
+ADD column (column1 datatype, )
+
+for deleteing one column
+
+alter table table_name 
+drop column column_name.
+
+for deleting more than one
+
+alter table table_name 
+drop column column1, drop column2
+
+
+
+
+MySQL shell --> 
+
+    \sql
+    \connect root@localhost:3306
+    show schemas
+    use rakesh
+    drop schemas database name --> to delete the table 
+    show tables;
+    describe users;
+    create table users (u_id int, u_name varchar(30)); --> To create a single column
+    alter table users add column (u_city varchar(10), u_pincode int);
+
+    alter table users rename column u_name to user_name; --> to change the coulmn name 
+    alter table users rename to user_details; --> to change the name of the table.
+
+    drop table Table_name; --> to delete the table in the database;
+    alter table user_details drop column u_pincode; --> ddelete the coulmn in the table 
+
+
+truncate table table_name; --> this will be deletes the data in the table
+
+select * from the table --> select is used to select the data. select  *  --> select all 
+
+
+DML --> Data Manipulation Language
+
+Insert:-
+
+    Insert into table_name (column1, column2) values (value1, value2);
+
+    For inserting single row 
+
+    Insert into table_name (column1, column2)
+    values (value1, value2);
+
+    for insering multiple rows
+
+    Insert into table_name (column1, column2) 
+    values (value1, value2),(value1, value2),(value1, value2);
+
+
+select * from user_details; --> to see the data in the table
+
+
+Update:- 
+    update table_name 
+    set column_name where record = value;
+
+    update user_details set u_gender = "T" where user_id=3;
+
+Delete:-
+    delete from table_name
+    where record = value;
+
+    delete from user_details where user_id=3;
+
+
+18-10-2024 --> Friday
+
+Clause, Operators(and,or,Not)
+
+Where clause:- 
+
+    --> For filteration the records based on the certain condition.
+
+select * from table_name where column_name = value;
+
+select order_id(column1), quantity(column2) from order(table name) where total_price(column3)>1500;
+
+Operators in SQL:-
+
+    --> AND, --> all conditions need to be true
+    --> OR, --> Atleast one condition need to be true 
+    --> NOT --> It will excludes the record that matches 
+
+
+select * from table_name where column_name = value AND column2_name > value; 
+
+select * from table_name where column_name > value AND (column2_name = value or column2_name = value); 
+
+select * from table_name where not column_name = value;
+
+
+select movie_name, Hero, director, collections, budget  from rakesh_movies where collections>500 and Hit_or_Flop = "Hit" and not director = "Rajamouli" ;
+
+
+select * from rakesh_ipl where not s_no is NULL;
+
+
+update table_name set column_name = value where column_name = value(this is a condition);
+
+delete table_name where column2_name = value(condition); 
+
+
+21.10.24 --> Monday
+
+
+constraints
+
+1. Not Null --> by using we can keep a condition that we should enter the value.
+
+    create table table_name (column1 Datatype (constraint --> not null), column2 datatype)
+    create table user (user_id int not null, user_name varchar(45) not null, user_location varchar(40));
+
+2. Unique --> if we use then the value should not be duplicate.
+
+    create table table_name (column1 Datatype (constraint --> Unique), column2 datatype)
+    create table user (user_id int unique, user_name varchar(45), user_location varchar(40));
+
+3. Deafult --> by using these we can give a deafult value for the column as the common value to the column.
+
+    create table table_name (column1 Datatype (constraint --> Deafult "value"), column2 datatype)
+    create table 11R (batch_no varchar(10) default '11R', name varchar(20)) ;
+
+4. Check --> it will be used for the giving the condition 
+
+    create table table_name (column1 Datatype, column2 datatype, (constraint --> check condition))
+    create table users (s_id int, s_age int check s_age > 20, s_name varchar(40))
+
+5. Auto_increment --> for every record we can increment the value allows only int.
+
+    create table table_name (column1 Datatype (constraint --> auto_increment), column2 datatype)
+    create table users (s_id int auto_increment unique, s_age int, s_name varchar(40))
+
+6. Primary Key --> which is the combitation of not_null and unique
+
+7. foreign key  --> used to make relation b/w the multiple tables
+
+
+Wild characters --> Like, in,between, as ,alias
+
+for retrieving the data we can use rules 
+
+As --> select b_no as batch_num, s_name from table_name; --> this will be used as the only for displaying
+
+Like --> %_ select student_name from 11R where student_name like 'y%'; --> give the name that starting y  '%k' --> ending with k
+'k____' --> agter k these many letter should br there , %k% limit 10 --> gives values wihich includes the in the limit 10
+
+in --> used to combine multiple values 
+    --> select city from users where city = "hyderabad" or city = "chennai" or city = "vizag"
+
+    --> select city from users where city in ("hyderabad", "chennai", "vizag)
+
+between --> used for the range --> select streak_points from users where streak_points between 20 and 40;
+
+
+
+22.10.24 --> Tuesday 
+
+functions, having44
+
+function --> 2 types 
+
+    1. Single row functions
+    2. Multiple row functions or Aggregate functions 
+        2.1 count()-->(arguments --> column_names) --> in these we can use * (all)
+        2.2 sum()
+        2.3 max()
+        2.4 min()
+        2.5 avg()
+        2.6 group by --> used to group the data
+        2.7 having --> used to filter the data after grouping the data
+        2.8 distinct --> used to remove the duplicate values
+        2.9 concat() --> used to combine the multiple values into one
+        2.10 upper() --> used to convert the string into upper case
+        2.11 lower() --> used to convert the string into lower case
+        2.12 trim() --> used to remove the spaces from the string
+        2.13 now() --> used to get the current date and time
+
+Single row function --> based on no of inputs outputs will be same
+
+length --> select length(ename) from emp; --> it give the length of the name 
+
+concate --> select concate("mr. ",ename) from emp --> it adds mr to the every name in the ename column
+
+lower --> select lower(ename) from emp; --> it convert the name into lower case
+
+upper --> select upper(ename) from emp; --> it convert the name into upper case
+
+subString --> select substring(ename,1,4) from emp; --> in mysql it starts from the 1.
+
+round --> select round(number --> salary, decimals --> 1) from emp; --> it will round the decimal value
+
+ceil --> select ceil(number) --> it will gives the nearest upperer round figure value
+
+year/month/day --> select month(hiredate) from emp--> extracts the year from the complete date.
+
+trim --> select trim(ename) from emp; --> it remove the spaces from the name
+
+now --> select now() from dual; --> it give the current date and time
+
+
+multiple row function --> It will gives single shot value
+
+sum --> select sum(salary) from emp;
+
+count --> select count(* or salary) from emp;
+
+max --> select max(salary) from emp;
+
+min --> select min(salary) from emp;
+
+avg --> select avg(salary) from emp;
+
+
+order by:- order by is used to sort the data in ascending or descending order.
+
+    It can be used with any column of the table.
+
+    select * from emp order by salary (by deafult ascending will be there)
+
+    1. Ascending order --> select * from emp order by salary Asc;
+    2. Decending order --> select * from emp order by salary desc;
+
+select * from emp order by salary desc limit 1;
+
+group by:- group by is used to group the data based on one or more column.
+
+    --> select deptno from emp group by deptno;
+    --> select deptno, max(salary) from emp group by deptno;
+    --> select deptno, count(deptno) from emp group by deptno;
+
+
+23.10.24 --> wendesday
+
+Having
+
+Having:- Having is used to filter the data after grouping the data.
+
+    select * from emp group by deptno having sal > 1000;
+    select deptno, max(sal), min(sal) from emp group by deptno;
+    select deptno, count(deptno), max(sal), min(sal) from emp group by deptno having count(deptno)>4;
+
+
+select * from emp order by sal desc limit 10 offset 5; --> offset will be used to skip the 1st 5 records
+
+in where clause multi row function can't be used;
+in having we can use multi row functions.
+
+
+Synatx of using all these in the order 
+
+select column_name
+from table_name                    --> 1st it will execute
+[where <condition>]                --> 2nd it will execute row by row
+group by column_name               --> 3rd it will execute group
+having <condition>                 --> exeute based on the group
+order by column_name [Asc/Desc]    --> excute row by row
+limit number                       --> it will execute row by row. 
+offset number;                     --> it will execute row by row
+
+
+joint:-
+    combining tow or more tables.
+    --> select * from emp,dept where emp.deptno = dept.deptno;
+    --> select * from emp e,dept d where e.deptno = d.deptno
+
+1. inner joint:-
+    when 2 table have comman points that will be used
+
+    --> select columns from table1 from inner join table2 on table1.column = table2.column;
+
+    --> select * from emp inner join dept on emp.deptno = dept.deptno;
+
+2. left joint:-
+    when 2 table have comman points that will be used and if there is no comman points in left table it will show null in right table.
+
+    right + common points --> will br formed.
+
+--> select * from emp left join dept on emp.deptno = dept.deptno;
+
+3. Right joint:-
+    when 2 table have comman points that will be used and if there is no comman points in right table it will show null in left table.
+
+    right + common points --> will be formed.
+
+    --> select * from emp right join dept on emp.deptno = dept.deptno;
+
+4. full outer joint --> MySQL will not support this --> we will use union for these by adding left and right joints
+    
+    --> select * from emp left join dept on emp.deptno = dept.deptno union select * from emp right join dept on emp.deptno = dept.deptno;
+
+5. Self joint:-
+    
+    when we want to join the same table with itself.
+    --> SELECT a.column, b.column FROM table a JOIN table b ON a.column = b.column;
+    -->  select * from emp join dept on emp.deptno = dept.deptno;
+
+
+6. cross joint:-
+
+    select * from emp cross join dept;
+
+    when we want to join the same table with itself and all the records will be used.
+
+    the left side row will be matched to the right side every row. 
+
+    eg:- if left = 4 and right = 4 total rows will 16.
+
+Alias:-
+    
+    --> select e.ename, e.deptno, d.loc from emp e inner join dept d on e.deptno = d.deptno;
+
+    emp is changed to e and dept changes to d
+
+    --> select e.ename, d.dname from emp e inner join dept d on e.deptno = d.deptno;
+
+
+
+
+28.10.24 --> Monday
+
+TCL --> 
+    1. Transaction control language --> used to manage the transaction in database.
+    2. It is used to manage the database in ACID properties.
+
+
+Normalization:- 
+    1. Normalization is the process of organizing the data in database to minimize the data redundancy
+    2. It is used to remove the data redundancy and dependency.
+    3. It is used to improve the data integrity.
+    4. It is used to improve the data security.
+    5. It is used to improve the data scalability.
+    6. It is used to improve the data maintainability.
+    7. It is used to improve the data performance.
+    8. It is used to improve the data consistency.
+    9. It is used to improve the data availability.
+    10. It is used to improve the data backup and recovery.
+
+
+set autocommit = off;
+
+Rollback:- By using this it will takes the last postion where it was commited;
+
+Savepoint :- 
+    by creating the Savepoint we can able to go to that point for any changes.
+
+    Syntax:- Savepoint Savepoint_name;
+
+    Rollback to Savepoint_name; ---> To go to the particular savepoint.
+
+
+DCL 
+1. Data control language --> used to manage the database security.
+
+
+Create user 'user_name'@'host_name'IDENTIFIED by 'Password';
+
+    User_name: is the name of the user you need to create.
+    host_name: specifies the host from which the user can contact
+    Password: is the user password
+
+Select user from mysql.user;
+
+    This query is used to check the user in the database.
+
+drop user user_name@host_name;
+    This query is used to delete the user from the database.
+
+
+grant privilages on database_name.table_name to 'username'@'host';
+
+grant select on practice.emp to rakesh@localhost;
+
+show grant for rakesh@localhost; 
+    This query is used to check the grant for the user.
+
+Revoke privilages on database_name.table_name from 'username'@'host';
+

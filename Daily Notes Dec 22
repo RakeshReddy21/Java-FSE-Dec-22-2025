@@ -882,3 +882,33 @@ Fetch API --> It is a function that is used to fetch the data from the server.
 Day 9 Jan 2 2026 --> Bootstrap
 
 Bootstrap --> It is a framework that is used to create the responsive and mobile-friendly websites.
+
+
+Day 10 Jan 3 2026 --> jQuery
+
+jQuery --> It is a JavaScript library that is used to make the web development easier.
+
+
+Day 11 Jan 5 2026 --> SQL 
+
+
+What is Database?
+    --> A database is a collection of structured information or data.
+
+SQL --> Structured Query Language --> It is a language that is used to manage the database.
+
+
+Build a schema for the e-commerce website
+
+
+
+customers information --> User id (primary key) integer, username varchar(50), email varchar(50), city varchar(50), state varchar(50), country varchar(50)
+products information --> Product id (primary key) integer, product name varchar(50), price integer, product description varchar(255), product price integer, product availability boolean, quantity available integer
+sellers information --> seller id (primary key), seller name varchar(50), product id(foreign key) integer, seller mobile number integer
+orders information --> order id (primary key) integer, user id (foreign key) integer, product id (foreign key) integer, order quantity integer, order date date, order status varchar(50), payment status boolean
+payment information --> payment id (primary key) integer, order id (foreign key) integer, payment amount integer, payment date date, type of payment varchar(50)
+Feedback of product --> Feedback id(primary key) integer, order id(foreign key) integer, feedback varchar(255), feedback date date, Product rating integer
+
+
+
+Search box (country name) -- responsive design 
